@@ -1,0 +1,3 @@
+/home/gaurav/Graphics/jet_joyride/build/CMakeFiles/edit_cache.dir
+/home/gaurav/Graphics/jet_joyride/build/CMakeFiles/rebuild_cache.dir
+/home/gaurav/Graphics/jet_joyride/build/CMakeFiles/graphics_asgn1.dir
