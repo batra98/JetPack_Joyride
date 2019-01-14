@@ -1,6 +1,7 @@
 #include "main.h"
 #include "timer.h"
 #include "ball.h"
+#include "player.h"
 
 
 using namespace std;
@@ -13,18 +14,19 @@ GLFWwindow *window;
 * Customizable functions *
 **************************/
 
-Ball ball1;
-Ball ball2;
+Player player;
 
 bounding_box_t box1;
-bounding_box_t box2;
 
-bool sam;
+
+
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 
 Timer t60(1.0 / 60);
+double dt = (1.0/60);
+
 
 /* Render the scene with openGL */
 /* Edit this function according to your assignment */
@@ -37,16 +39,16 @@ void draw() {
     glUseProgram (programID);
 
     // Eye - Location of camera. Don't change unless you are sure!!
-    glm::vec3 eye ( 5*cos(camera_rotation_angle*M_PI/180.0f), 0, 5*sin(camera_rotation_angle*M_PI/180.0f) );
+    glm::vec3 eye (0,0,1);
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
     glm::vec3 target (0, 0, 0);
     // Up - Up vector defines tilt of camera.  Don't change unless you are sure!!
-    glm::vec3 up (0,0,1);
-
+    glm::vec3 up (0,1,0);
+    //reset_screen();
     // Compute Camera matrix (view)
     Matrices.view = glm::lookAt( eye, target, up ); // Rotating Camera for 3D
     // Don't change unless you are sure!!
-    // Matrices.view = glm::lookAt(glm::vec3(0, 0, 3), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
+    //Matrices.view = glm::lookAt(glm::vec3(0, 0, 1), glm::vec3(0, 0, 0), glm::vec3(0, 1, 0)); // Fixed camera for 2D (ortho) in XY plane
 
     // Compute ViewProject matrix as view/camera might not be changed for this frame (basic scenario)
     // Don't change unless you are sure!!
@@ -58,51 +60,39 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
-    ball1.draw(VP);
-    ball2.draw(VP);
+    
+    player.draw(VP);
+   
 }
 
 void tick_input(GLFWwindow *window) {
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
+    int up = glfwGetKey(window, GLFW_KEY_UP);
+
+    if(left==1)
+    {
+        player.velocity.x = -1;
+    }
+    else if(right == 1)
+    {
+        player.velocity.x = 1;
+    }
+    else if(up == 1)
+    {
+        player.up = 1;
+        player.velocity.y = 1;
+    }
+    
+
 }
 
-void tick_elements(int width,int height) {    
+void tick_elements(int width,int height) {
 
-    ball1.tick();
-    ball2.tick();
-
-    box1.x = ball1.position.x;
-    box1.y = ball1.position.y;
-    box1.width = 1;
-    box1.height = 1;
-
-    box2.x = ball2.position.x;
-    box2.y = ball2.position.y;
-    box2.width = 1;
-    box2.height = 1;
-
-    //camera_rotation_angle += 1;
-
-    sam = detect_collision(box1,box2);
-    if(sam)
-    {
-        ball1.speed *= -1;
-        ball2.speed *= -1;
-    }
-    //cout << ball1.position.y << " " << ball2.position.y;
-    if(ball1.position.y < -3)
-    {
-        ball1.speed *= -1;
-    }
+    player.tick(dt);
+    cout << player.position.x << " " << player.position.y << " " << player.position.z << '\n';
+   
     
-    
-    if(ball2.position.y > 3)
-    {
-        ball2.speed *= -1;
-    }
-
-
 
 }
 
@@ -112,9 +102,10 @@ void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
 
-    ball1 = Ball(0,-3,COLOR_RED);
-    ball2 = Ball(0,3,COLOR_BLACK);
-    ball2.speed = -1*ball2.speed;
+   
+    player = Player(0,0,0,COLOR_RED);
+   
+   
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform
