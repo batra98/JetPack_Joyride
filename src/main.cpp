@@ -2,6 +2,9 @@
 #include "timer.h"
 #include "ball.h"
 #include "player.h"
+#include "platform.h"
+#include "firebeams.h"
+
 
 
 using namespace std;
@@ -15,11 +18,8 @@ GLFWwindow *window;
 **************************/
 
 Player player;
-
-bounding_box_t box1;
-
-
-
+Platform platform;
+Firebeams firebeams;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
@@ -37,7 +37,8 @@ void draw() {
     // use the loaded shader program
     // Don't change unless you know what you are doing
     glUseProgram (programID);
-
+    //screen_zoom-=0.01;
+    reset_screen();
     // Eye - Location of camera. Don't change unless you are sure!!
     glm::vec3 eye (0,0,1);
     // Target - Where is the camera looking at.  Don't change unless you are sure!!
@@ -62,26 +63,49 @@ void draw() {
     // Scene render
     
     player.draw(VP);
+    platform.draw(VP);
+    firebeams.draw(VP);
    
 }
+
+
 
 void tick_input(GLFWwindow *window) {
     int left  = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up = glfwGetKey(window, GLFW_KEY_UP);
+    int w = glfwGetKey(window,GLFW_KEY_W);
+    int s = glfwGetKey(window,GLFW_KEY_S);
+    //cout << scroll << '\n';
+    if(player.acceleration.x * player.velocity.x > 0)
+    {
+        player.velocity.x = 0;
+        player.acceleration.x = 0;
+    }
 
     if(left==1)
     {
-        player.velocity.x = -1;
+        player.velocity.x = -2;
+        player.acceleration.x = 1;
     }
-    else if(right == 1)
+    if(right == 1)
     {
-        player.velocity.x = 1;
+        player.velocity.x = 2;
+        player.acceleration.x = -1;
     }
-    else if(up == 1)
+    if(up == 1)
     {
         player.up = 1;
-        player.velocity.y = 1;
+        player.velocity.y = 2;
+    }
+    if(w==1)
+    {
+        if(screen_zoom>0)
+        screen_zoom-=0.01;
+    }
+    if(s==1)
+    {
+        screen_zoom+=0.01;
     }
     
 
@@ -90,7 +114,10 @@ void tick_input(GLFWwindow *window) {
 void tick_elements(int width,int height) {
 
     player.tick(dt);
-    cout << player.position.x << " " << player.position.y << " " << player.position.z << '\n';
+    platform.tick(dt);
+    firebeams.tick(dt);
+    cout << platform.position.x << " " << platform.position.y << " " << platform.position.z << " "<< screen_zoom << '\n';
+    //cout << player.position.x << " " << player.position.y << " " << player.position.z << " "<< screen_zoom << '\n';
    
     
 
@@ -104,6 +131,8 @@ void initGL(GLFWwindow *window, int width, int height) {
 
    
     player = Player(0,0,0,COLOR_RED);
+    platform = Platform(0,0,0,COLOR_BLACK);
+    firebeams = Firebeams(0,0,0,COLOR_RED);
    
    
     // Create and compile our GLSL program from the shaders

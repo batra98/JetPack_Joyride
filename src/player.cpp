@@ -5,7 +5,7 @@ Player::Player(float x,float y, float z, color_t color)
 {
     this->position = glm::vec3(x,y,z);
     this->up = 0;
-    this->acceleration.y = -1;
+    this->acceleration.y = -2;
     this->acceleration.x = 0;
     this->acceleration.z = 0;
 
@@ -16,42 +16,42 @@ Player::Player(float x,float y, float z, color_t color)
     this->size = 0.25f;
 
     static const GLfloat vertex_buffer_data[] = {
-       -size,-size,-size, // triangle 1 : begin
-        -size,-size, size,
-        -size, size, size, // triangle 1 : end
-        size, size,-size, // triangle 2 : begin
-        -size,-size,-size,
-        -size, size,-size, // triangle 2 : end
-        size,-size, size,
-        -size,-size,-size,
-        size,-size,-size,
-        size, size,-size,
-        size,-size,-size,
-        -size,-size,-size,
-        -size,-size,-size,
-        -size, size, size,
-        -size, size,-size,
-        size,-size, size,
-        -size,-size, size,
-        -size,-size,-size,
-        -size, size, size,
-        -size,-size, size,
-        size,-size, size,
-        size, size, size,
-        size,-size,-size,
-        size, size,-size,
-        size,-size,-size,
-        size, size, size,
-        size,-size, size,
-        size, size, size,
-        size, size,-size,
-        -size, size,-size,
-        size, size, size,
-        -size, size,-size,
-        -size, size, size,
-        size, size, size,
-        -size, size, size,
-        size,-size, size
+       -this->size,-this->size,-this->size, // triangle 1 : begin
+        -this->size,-this->size, this->size,
+        -this->size, this->size, this->size, // triangle 1 : end
+        this->size, this->size,-this->size, // triangle 2 : begin
+        -this->size,-this->size,-this->size,
+        -this->size, this->size,-this->size, // triangle 2 : end
+        this->size,-this->size, this->size,
+        -this->size,-this->size,-this->size,
+        this->size,-this->size,-this->size,
+        this->size, this->size,-this->size,
+        this->size,-this->size,-this->size,
+        -this->size,-this->size,-this->size,
+        -this->size,-this->size,-this->size,
+        -this->size, this->size, this->size,
+        -this->size, this->size,-this->size,
+        this->size,-this->size, this->size,
+        -this->size,-this->size, this->size,
+        -this->size,-this->size,-this->size,
+        -this->size, this->size, this->size,
+        -this->size,-this->size, this->size,
+        this->size,-this->size, this->size,
+        this->size, this->size, this->size,
+        this->size,-this->size,-this->size,
+        this->size, this->size,-this->size,
+        this->size,-this->size,-this->size,
+        this->size, this->size, this->size,
+        this->size,-this->size, this->size,
+        this->size, this->size, this->size,
+        this->size, this->size,-this->size,
+        -this->size, this->size,-this->size,
+        this->size, this->size, this->size,
+        -this->size, this->size,-this->size,
+        -this->size, this->size, this->size,
+        this->size, this->size, this->size,
+        -this->size, this->size, this->size,
+        this->size,-this->size, this->size
     };
 
     this->object = create3DObject(GL_TRIANGLES,12*3,vertex_buffer_data,color,GL_FILL);
@@ -80,17 +80,21 @@ void Player::setposition(float x,float y,float z)
 
 void Player::tick(double dt)
 {
-    if(this->position.y > -3 && this->position.y < 3)
+    if(this->position.y > -3)
     {
-        this->acceleration.y = -1;
+        this->acceleration.y = -2;
         this->up = 0;
     }
-    else
+    else if(this->position.y < -3)
     {
         if(this->up == 0)
             this->velocity.y = 0;
         this->acceleration.y = 0;
     }
+
+    if(this->position.y > 3)
+        this->velocity.y = 0;
+
     
     this->velocity = this->velocity + this->acceleration*(glm::vec3(dt,dt,dt));
     this->position = this->position + this->velocity*(glm::vec3(dt,dt,dt));
