@@ -4,6 +4,9 @@
 #include "player.h"
 #include "platform.h"
 #include "firebeams.h"
+#include "background.h"
+#include "coin.h"
+
 
 
 
@@ -20,9 +23,15 @@ GLFWwindow *window;
 Player player;
 Platform platform;
 Firebeams firebeams;
+Background background;
+//Coin coin;
+vector<Coin> coins;
 
-float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
+
+float screen_zoom = 0.7, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
+int n = 7,m = 3,total = 50;
+int i = 0,l;
 
 Timer t60(1.0 / 60);
 double dt = (1.0/60);
@@ -62,9 +71,23 @@ void draw() {
 
     // Scene render
     
-    player.draw(VP);
+    background.draw(VP);
+    background.draw2(VP);
     platform.draw(VP);
-    firebeams.draw(VP);
+    for(i=0;i<n*m*total;i++)
+    {
+        //cout << coins[i].position.x << '\n';
+        if(coins[i].visible == 1)
+        coins[i].draw(VP);
+    }
+    //coins[0].draw(VP);
+    //coins[1].draw(VP);
+    //coin.draw(VP);
+    //firebeams.draw(VP);
+    if(player.up == 0)
+        player.draw2(VP);
+    else if(player.up == 1)
+        player.draw(VP);    
    
 }
 
@@ -116,7 +139,25 @@ void tick_elements(int width,int height) {
     player.tick(dt);
     platform.tick(dt);
     firebeams.tick(dt);
-    cout << platform.position.x << " " << platform.position.y << " " << platform.position.z << " "<< screen_zoom << '\n';
+    background.tick();
+    //cout << "size =" +coins.size() << '\n';
+    
+    for(i = 0;i<n*m*total;i++)
+    {
+        coins[i].tick(dt);
+        if(coins[i].visible == 1)
+        {
+            if(detect_collision(coins[i].bounding_box(),player.bounding_box()) == 1)
+            {
+                //cout << i << '\n';
+                coins[i].visible = 0;
+            }
+        }
+    }
+    //coins[0].tick(dt);
+    //coins[1].tick(dt);
+    //coin.tick(dt);
+    //cout << platform.position.x << " " << platform.position.y << " " << platform.position.z << " "<< screen_zoom << '\n';
     //cout << player.position.x << " " << player.position.y << " " << player.position.z << " "<< screen_zoom << '\n';
    
     
@@ -128,11 +169,31 @@ void tick_elements(int width,int height) {
 void initGL(GLFWwindow *window, int width, int height) {
     /* Objects should be created before any other gl function and shaders */
     // Create the models
-
-   
-    player = Player(0,0,0,COLOR_RED);
+    
+    
+    player = Player(-2,-2,0,COLOR_RED);
     platform = Platform(0,0,0,COLOR_BLACK);
     firebeams = Firebeams(0,0,0,COLOR_RED);
+    background = Background(0,0,0,COLOR_BATMAN_BELT);
+
+    n = rand() % 10 + 1;
+    m = rand() % 4 + 1;
+
+    for(l=0;l<total;l++)
+    {
+        for(i=0;i<n;i++)
+        {
+            /*coins.push_back(Coin((i+l*20)/2.0,0,0,COLOR_COIN));
+            coins.push_back(Coin((i+l*20)/2.0,1.0,0.0,COLOR_COIN));
+            coins.push_back(Coin((i+l*20)/2.0,2.0,0.0,COLOR_COIN));*/
+            for(int g = 0;g<m;g++)
+            {
+                coins.push_back(Coin((i+l*20)/2.0,(float)(rand()%3+1),0,COLOR_COIN));
+            }
+        }
+    }
+    
+    
    
    
     // Create and compile our GLSL program from the shaders
@@ -159,8 +220,9 @@ void initGL(GLFWwindow *window, int width, int height) {
 
 int main(int argc, char **argv) {
     srand(time(0));
-    int width  = 600;
-    int height = 600;
+    int width  = 900;
+    int height = 800;
+
 
     window = initGLFW(width, height);
     

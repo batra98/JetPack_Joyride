@@ -1,24 +1,19 @@
 #include "main.h"
 
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef BACKGROUND_H
+#define BACKGROUND_H
 
-class Player{
+class Background{
 public:
-    Player() {}
-    Player(float x,float y,float z,color_t color);
+    Background() {}
+    Background(float x,float y,float z,color_t color);
     glm::vec3 position;
-    glm::vec3 acceleration;
-    glm::vec3 velocity;
-    void draw2(glm::mat4 VP);
     void draw(glm::mat4 VP);
+    void draw2(glm::mat4 VP);
     void setposition(float x,float y,float z);
-    void tick(double dt);
-    bounding_box_t bounding_box();
+    void tick();
     double size;
     float rotation;
-    int up;
-
 private:
     VAO *object;
     VAO *object1;
@@ -34,7 +29,6 @@ private:
     VAO *object11;
     VAO *object12;
     VAO *object13;
-
 };
 
 #endif

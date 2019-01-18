@@ -84,5 +84,15 @@ extern const color_t COLOR_BLACK;
 extern const color_t COLOR_BACKGROUND;
 extern const color_t COLOR_YELLOW;
 extern const color_t COLOR_DARK_RED;
+extern const color_t COLOR_BATMAN_SUIT;
+extern const color_t COLOR_BATMAN_SKIN;
+extern const color_t COLOR_BATMAN_BODY;
+extern const color_t COLOR_BATMAN_BELT;
+extern const color_t COLOR_BATMAN_CAPE;
+extern const color_t COLOR_BATMAN_EYE;
+extern const color_t COLOR_FLAME_OUTER;
+extern const color_t COLOR_BATMAN_JETPACK;
+extern const color_t COLOR_BACKGROUND_OUTER;
+extern const color_t COLOR_COIN;
 
 #endif
