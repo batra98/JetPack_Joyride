@@ -7,6 +7,7 @@
 #include "background.h"
 #include "coin.h"
 #include "magnet.h"
+#include "firelines.h"
 
 
 
@@ -28,6 +29,7 @@ Firebeams firebeam2;
 Background background;
 //Coin coin;
 vector<Coin> coins;
+vector<Firelines> firelines;
 Magnet magnet;
 
 
@@ -36,6 +38,7 @@ int range;
 float screen_zoom = 0.7, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
 int n = 7,m = 3,total = 50;
+int total_firelines = 50;
 int i = 0,l;
 float magnet_x=4.0;
 float magnet_y=4.5f;
@@ -124,6 +127,10 @@ void draw() {
         //cout << coins[i].position.x << '\n';
         if(coins[i].visible == 1)
         coins[i].draw(VP);
+    }
+    for(i=0;i<total_firelines;i++)
+    {
+        firelines[i].draw(VP);
     }
     //coins[0].draw(VP);
     //coins[1].draw(VP);
@@ -265,18 +272,30 @@ void tick_elements(int width,int height) {
             }
         }
     }
+    
+    for(i=0;i<total_firelines;i++)
+    {
+        firelines[i].tick(dt);
+
+        if(detect_collision(player.bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+        {
+            cout << i << '\n';
+        }
+    }
     //cout << firebeam2.position.y << '\n';
 
     if(detect_collision(player.bounding_box(),firebeam2.bounding_box(),0) == 1)
     {
-        if(firebeam2.visible == 1)
-        cout << "touch 2" << '\n';
+        //if(firebeam2.visible == 1)
+        //cout << "touch 2" << '\n';
     }
     if(detect_collision(player.bounding_box(),firebeams.bounding_box(),0) == 1)
     {
-        if(firebeams.visible == 1)
-        cout << "touch 1" << '\n';
+        //if(firebeams.visible == 1)
+        //cout << "touch 1" << '\n';
     }
+
+    
     //coins[0].tick(dt);
     //coins[1].tick(dt);
     //coin.tick(dt);
@@ -301,8 +320,8 @@ void initGL(GLFWwindow *window, int width, int height) {
     background = Background(0,0,0,COLOR_BATMAN_BELT);
     magnet = Magnet(magnet_x,magnet_y,0,COLOR_COIN);
 
-    n = rand() % 10 + 1;
-    m = rand() % 4 + 1;
+    n = rand() % 15 + 1;
+    m = rand() % 7 + 1;
     range = rand() % 5 + 1;
 
     for(l=0;l<total;l++)
@@ -317,6 +336,16 @@ void initGL(GLFWwindow *window, int width, int height) {
                 coins.push_back(Coin((i+l*20)/2.0,(float)(rand()%3+1),0,COLOR_COIN));
             }
         }
+    }
+
+    for(i=0;i<total_firelines/2;i++)
+    {
+        firelines.push_back(Firelines(rand()%200+1,(float)(rand()%3+1),0,COLOR_BATMAN_EYE));
+    }
+
+    for(l=i;l<total_firelines;l++)
+    {
+        firelines.push_back(Firelines(rand()%200+1,-(float)(rand()%3+1),0,COLOR_BATMAN_EYE));
     }
     
     
