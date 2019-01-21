@@ -42,52 +42,52 @@ Platform::Platform(float x,float y,float z,color_t color)
     for(i=0;i<100;i++)
     {
         vertex_buffer_data[k++] = -5.0f + size;
-        vertex_buffer_data[k++] = -3.3f;
+        vertex_buffer_data[k++] = -4.8f;
         vertex_buffer_data[k++] = 0.0f;
 
         vertex_buffer_data[k++] = -5.0f + size;
-        vertex_buffer_data[k++] = -4.0f;
+        vertex_buffer_data[k++] = -5.5f;
         vertex_buffer_data[k++] = 0.0f;
 
         vertex_buffer_data[k++] = +5.0f + size;
-        vertex_buffer_data[k++] = -4.0f;
+        vertex_buffer_data[k++] = -5.5f;
         vertex_buffer_data[k++] = 0.0f;
 
         vertex_buffer_data[k++] = 5.0f + size;
-        vertex_buffer_data[k++] = -4.0f;
+        vertex_buffer_data[k++] = -5.5f;
         vertex_buffer_data[k++] = 0.0f;
 
         vertex_buffer_data[k++] = -5.0f + size;
-        vertex_buffer_data[k++] = -3.3f;
+        vertex_buffer_data[k++] = -4.8f;
         vertex_buffer_data[k++] = 0.0f;
 
         vertex_buffer_data[k++] = 5.0f + size;
-        vertex_buffer_data[k++] = -3.3f;
+        vertex_buffer_data[k++] = -4.8f;
         vertex_buffer_data[k++] = 0.0f;
 
 
         vertex_buffer_data1[l++] = -0.5f + size;
-        vertex_buffer_data1[l++] = -3.5f;
+        vertex_buffer_data1[l++] = -5.0f;
         vertex_buffer_data1[l++] = 0.0f;
 
         vertex_buffer_data1[l++] = -0.5f + size;
-        vertex_buffer_data1[l++] = -3.8f;
+        vertex_buffer_data1[l++] = -5.3f;
         vertex_buffer_data1[l++] = 0.0f;
 
         vertex_buffer_data1[l++] = 0.5f + size;
-        vertex_buffer_data1[l++] = -3.8f;
+        vertex_buffer_data1[l++] = -5.3f;
         vertex_buffer_data1[l++] = 0.0f;
 
         vertex_buffer_data1[l++] = 0.5f + size;
-        vertex_buffer_data1[l++] = -3.8f;
+        vertex_buffer_data1[l++] = -5.3f;
         vertex_buffer_data1[l++] = 0.0f;
 
         vertex_buffer_data1[l++] = -0.5f + size;
-        vertex_buffer_data1[l++] = -3.5f;
+        vertex_buffer_data1[l++] = -5.0f;
         vertex_buffer_data1[l++] = 0.0f;
 
         vertex_buffer_data1[l++] = 0.5f + size;
-        vertex_buffer_data1[l++] = -3.5f;
+        vertex_buffer_data1[l++] = -5.0f;
         vertex_buffer_data1[l++] = 0.0f;
 
         size += 2.0f;

@@ -72,7 +72,7 @@ struct bounding_box_t {
     float height;
 };
 
-bool detect_collision(bounding_box_t a, bounding_box_t b);
+bool detect_collision(bounding_box_t a, bounding_box_t b,float rotation);
 
 extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
@@ -94,5 +94,7 @@ extern const color_t COLOR_FLAME_OUTER;
 extern const color_t COLOR_BATMAN_JETPACK;
 extern const color_t COLOR_BACKGROUND_OUTER;
 extern const color_t COLOR_COIN;
+extern const color_t COLOR_MAGNET_BODY;
+extern const color_t COLOR_MAGNET_FRONT;
 
 #endif

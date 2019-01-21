@@ -162,24 +162,38 @@ void Player::setposition(float x,float y,float z)
     this->position = glm::vec3(x,y,z);
 }
 
-void Player::tick(double dt)
+void Player::tick(double dt,int visible)
 {
-    if(this->position.y > -3)
+    if(visible==0)
     {
-        this->acceleration.y = -2;
-        this->up = 0;
-    }
-    else if(this->position.y < -3)
-    {
-        if(this->up == 0)
+        if(this->position.y > -4.3)
+        {
+            
+                this->acceleration.y = -2;
+                this->up = 0;
+            
+        }
+        else if(this->position.y < -4.3)
+        {
+            if(this->up == 0)
+                this->velocity.y = 0;
+            this->acceleration.y = 0;
+        }
+
+        if(this->position.y > 5)
             this->velocity.y = 0;
-        this->acceleration.y = 0;
+
     }
+    else if(visible == 1)
+    {
+        if(this->position.y > 5 || this->position.y < -4) 
+        {
+            //std::cout << position.y << '\n';
+            this->velocity.y = 0;
+            this->acceleration.y = 0;
+        }
 
-    if(this->position.y > 3)
-        this->velocity.y = 0;
-
-    
+    }
     this->velocity = this->velocity + this->acceleration*(glm::vec3(dt,dt,dt));
     this->position = this->position + this->velocity*(glm::vec3(dt,dt,dt));
     

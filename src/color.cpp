@@ -16,3 +16,5 @@ const color_t COLOR_FLAME_OUTER = {240, 24, 20};
 const color_t COLOR_BATMAN_JETPACK = {240, 123, 20};
 const color_t COLOR_BACKGROUND_OUTER ={200,0,0};
 const color_t COLOR_COIN = {212,175,55};
+const color_t COLOR_MAGNET_BODY = {192,192,192};
+const color_t COLOR_MAGNET_FRONT = {220,20,60};
