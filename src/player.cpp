@@ -166,21 +166,21 @@ void Player::tick(double dt,int visible)
 {
     if(visible==0)
     {
-        if(this->position.y > -4.3)
+        if(this->position.y > -6.5)
         {
             
                 this->acceleration.y = -2;
                 this->up = 0;
             
         }
-        else if(this->position.y < -4.3)
+        else if(this->position.y < -6.5)
         {
             if(this->up == 0)
                 this->velocity.y = 0;
             this->acceleration.y = 0;
         }
 
-        if(this->position.y > 5)
+        if(this->position.y > 7)
             this->velocity.y = 0;
 
     }

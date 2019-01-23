@@ -18,3 +18,5 @@ const color_t COLOR_BACKGROUND_OUTER ={200,0,0};
 const color_t COLOR_COIN = {212,175,55};
 const color_t COLOR_MAGNET_BODY = {192,192,192};
 const color_t COLOR_MAGNET_FRONT = {220,20,60};
+const color_t COLOR_BATMAN_WATER = {0, 167, 190};
+const color_t COLOR_BOOMERANG = {160,82,45};

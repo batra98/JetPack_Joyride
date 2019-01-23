@@ -8,6 +8,10 @@
 #include "coin.h"
 #include "magnet.h"
 #include "firelines.h"
+#include "bullet.h"
+#include "timer.h"
+#include "boomerang.h"
+#include "coin2.h"
 
 
 
@@ -28,16 +32,22 @@ Firebeams firebeams;
 Firebeams firebeam2;
 Background background;
 //Coin coin;
+vector<Bullet> bullet;
 vector<Coin> coins;
+vector<Coin2> coins_2;
 vector<Firelines> firelines;
 Magnet magnet;
+Timer magnet_time;
+Timer burnout;
+Boomerang boomerang;
 
 
+int score = 0;
 int counter = 0;
 int range;
-float screen_zoom = 0.7, screen_center_x = 0, screen_center_y = 0;
+float screen_zoom = 0.52, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
-int n = 7,m = 3,total = 50;
+int n = 7,m = 3,total = 20;
 int total_firelines = 50;
 int i = 0,l;
 float magnet_x=4.0;
@@ -85,6 +95,7 @@ void draw() {
     background.draw(VP);
     background.draw2(VP);
     platform.draw(VP);
+    boomerang.draw(VP);
 
     if(magnet.visible == 1)
     {
@@ -127,14 +138,22 @@ void draw() {
         //cout << coins[i].position.x << '\n';
         if(coins[i].visible == 1)
         coins[i].draw(VP);
+
+        if(coins_2[i].visible == 1)
+        coins_2[i].draw(VP);
     }
     for(i=0;i<total_firelines;i++)
     {
-        firelines[i].draw(VP);
+        if(firelines[i].visible == 0)
+            firelines[i].draw(VP);
+        else if(firelines[i].visible == 1)
+            firelines[i].draw2(VP);
     }
     //coins[0].draw(VP);
     //coins[1].draw(VP);
     //coin.draw(VP);
+    for(i=0;i<bullet.size();i++)
+        bullet[i].draw(VP);
     if(firebeams.visible == 0)
         firebeams.draw2(VP);
     else if(firebeams.visible == 1)
@@ -159,6 +178,7 @@ void tick_input(GLFWwindow *window) {
     int up = glfwGetKey(window, GLFW_KEY_UP);
     int w = glfwGetKey(window,GLFW_KEY_W);
     int s = glfwGetKey(window,GLFW_KEY_S);
+    int space = glfwGetKey(window,GLFW_KEY_SPACE);
     //cout << scroll << '\n';
     if(magnet.visible == 0)
     {
@@ -183,6 +203,10 @@ void tick_input(GLFWwindow *window) {
             player.up = 1;
             player.velocity.y = 2;
         }
+        if(space==1)
+        {
+            bullet.push_back(Bullet(player.position.x,player.position.y,player.position.z,COLOR_BATMAN_JETPACK));
+        }
     }
     else if(magnet.visible == 1)
     {
@@ -202,8 +226,12 @@ void tick_input(GLFWwindow *window) {
             player.up = 1;
             player.velocity.y = 20;
         }
+        if(space==1)
+        {
+            bullet.push_back(Bullet(player.position.x,player.position.y,player.position.z,COLOR_BATMAN_JETPACK));
+        }
     }
-    if(w==1)
+    /*if(w==1)
     {
         if(screen_zoom>0)
         screen_zoom-=0.01;
@@ -211,12 +239,14 @@ void tick_input(GLFWwindow *window) {
     if(s==1)
     {
         screen_zoom+=0.01;
-    }
+    }*/
     
 
 }
 
 void tick_elements(int width,int height) {
+
+    cout << "score" << "-> " << score << '\n';
 
     if(counter%360 == 0)
     {
@@ -225,6 +255,15 @@ void tick_elements(int width,int height) {
             magnet.visible = 0;
         }
         
+    }
+
+    if(counter%2 == 0)
+    {
+        for(i=0;i<bullet.size();i++)
+        {
+            if(firelines[i].visible == 1)
+                firelines[i].visible = 0;
+        }
     }
 
     if(counter%300 == 0)
@@ -255,6 +294,22 @@ void tick_elements(int width,int height) {
     firebeam2.tick2(dt,range);
     background.tick();
     magnet.tick(dt);
+    boomerang.tick(dt);
+    //cout << bullet.size() << '\n';
+    for(i=0;i<bullet.size();i++)
+    {
+        bullet[i].tick(dt);
+        if(bullet[i].position.x > 7)
+        {
+            bullet.erase(bullet.begin()+i);
+            continue;
+        }
+        if(bullet[i].position.y < -7)
+        {
+            bullet.erase(bullet.begin()+i);
+            continue;
+        }
+    }
 
     
 
@@ -269,6 +324,20 @@ void tick_elements(int width,int height) {
             {
                 //cout << i << '\n';
                 coins[i].visible = 0;
+                score += 5;
+                coins.erase(coins.begin()+i);
+            }
+        }
+
+        coins_2[i].tick(dt);
+        if(coins_2[i].visible == 1)
+        {
+            if(detect_collision(coins_2[i].bounding_box(),player.bounding_box(),0) == 1)
+            {
+                //cout << i << '\n';
+                coins_2[i].visible = 0;
+                score += 5;
+                coins_2.erase(coins_2.begin()+i);
             }
         }
     }
@@ -276,23 +345,59 @@ void tick_elements(int width,int height) {
     for(i=0;i<total_firelines;i++)
     {
         firelines[i].tick(dt);
-
-        if(detect_collision(player.bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+        for(l=0;l<bullet.size();l++)
         {
-            cout << i << '\n';
+            if(detect_collision(bullet[l].bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+            {
+                firelines[i].visible = 1;
+            }
         }
+
+        if(firelines[i].visible == 0)
+        {
+
+            if(detect_collision(player.bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+            {
+                //cout << i << '\n';
+                score -= 5;
+                firelines[i].visible = 1;
+            }
+        }
+
+        
+        
     }
+
+    
     //cout << firebeam2.position.y << '\n';
 
-    if(detect_collision(player.bounding_box(),firebeam2.bounding_box(),0) == 1)
+    if(firebeam2.visible == 1)
     {
-        //if(firebeam2.visible == 1)
-        //cout << "touch 2" << '\n';
+
+        if(detect_collision(player.bounding_box(),firebeam2.bounding_box(),0) == 1)
+        {
+            //if(firebeam2.visible == 1)
+            //cout << "touch 2" << '\n';
+            score -= 1;
+            firebeam2.visible == 0;
+        }
     }
-    if(detect_collision(player.bounding_box(),firebeams.bounding_box(),0) == 1)
+    if(firebeams.visible == 1)
     {
-        //if(firebeams.visible == 1)
-        //cout << "touch 1" << '\n';
+        if(detect_collision(player.bounding_box(),firebeams.bounding_box(),0) == 1)
+        {
+            //if(firebeams.visible == 1)
+            //cout << "touch 1" << '\n';
+            score -= 1;
+            firebeams.visible == 0;
+        }
+
+    }
+
+    if(detect_collision(player.bounding_box(),boomerang.bounding_box(),0) == 1)
+    {
+        //cout << "detected" << '\n';
+        score -= 1;
     }
 
     
@@ -315,10 +420,14 @@ void initGL(GLFWwindow *window, int width, int height) {
     
     player = Player(-2,-2,0,COLOR_RED);
     platform = Platform(0,0,0,COLOR_BLACK);
-    firebeams = Firebeams(0,-5,0,COLOR_RED);
-    firebeam2 = Firebeams(0,5,0,COLOR_RED);
-    background = Background(0,0,0,COLOR_BATMAN_BELT);
+    firebeams = Firebeams(0,-5,-2,COLOR_RED);
+    firebeam2 = Firebeams(0,5,-2,COLOR_RED);
+    background = Background(0,0,-5,COLOR_BATMAN_BELT);
     magnet = Magnet(magnet_x,magnet_y,0,COLOR_COIN);
+    magnet_time = Timer(4);
+    burnout = Timer(2);
+    boomerang = Boomerang(7,0,0,COLOR_BATMAN_EYE);
+    //bullet = Bullet(0,0,0,COLOR_BATMAN_JETPACK);
 
     n = rand() % 15 + 1;
     m = rand() % 7 + 1;
@@ -334,19 +443,22 @@ void initGL(GLFWwindow *window, int width, int height) {
             for(int g = 0;g<m;g++)
             {
                 coins.push_back(Coin((i+l*20)/2.0,(float)(rand()%3+1),0,COLOR_COIN));
+                coins_2.push_back(Coin2((i+l*20)/2.0,-(float)(rand()%3+1),0,COLOR_COIN));
             }
         }
     }
 
     for(i=0;i<total_firelines/2;i++)
     {
-        firelines.push_back(Firelines(rand()%200+1,(float)(rand()%3+1),0,COLOR_BATMAN_EYE));
+        firelines.push_back(Firelines(rand()%200+1,(float)(rand()%4+1),-1,COLOR_BATMAN_EYE));
     }
 
     for(l=i;l<total_firelines;l++)
     {
-        firelines.push_back(Firelines(rand()%200+1,-(float)(rand()%3+1),0,COLOR_BATMAN_EYE));
+        firelines.push_back(Firelines(rand()%200+1,-(float)(rand()%4+1),-1,COLOR_BATMAN_EYE));
     }
+
+    
     
     
    
@@ -419,7 +531,7 @@ int main(int argc, char **argv) {
 bool detect_collision(bounding_box_t a, bounding_box_t b, float rotation) {
     if(rotation == 0)
     {
-        return (abs(a.x - b.x) * 1 < (a.width + b.width)) && (abs(a.y - b.y) * 1 < (a.height + b.height));
+        return (abs(a.x - b.x) * 2 < (a.width + b.width)) && (abs(a.y - b.y) * 2 < (a.height + b.height));
     }
     else if (rotation > 0)
     {

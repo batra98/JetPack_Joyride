@@ -38,71 +38,71 @@ Firebeams::Firebeams(float x,float y,float z,color_t color)
     int k = 0;
 	for(int i = 0;i<n;i++)
 	{
-		g_vertex_buffer_data[k++] = -5.0f;
+		g_vertex_buffer_data[k++] = -7.0f;
 		g_vertex_buffer_data[k++] = 0.0f;
 		g_vertex_buffer_data[k++] = 0.0f;
 
-		g_vertex_buffer_data[k++] = -5.0f + 0.5*sin(2*M_PI/n*i);
+		g_vertex_buffer_data[k++] = -7.0f + 0.5*sin(2*M_PI/n*i);
 		g_vertex_buffer_data[k++] = 0.0f + 0.5*cos(2*M_PI/n*i);
 		g_vertex_buffer_data[k++] = 0.0f;
 
-		g_vertex_buffer_data[k++] = -5.0f + 0.5*sin(2*M_PI/n*(i+1));
+		g_vertex_buffer_data[k++] = -7.0f + 0.5*sin(2*M_PI/n*(i+1));
 		g_vertex_buffer_data[k++] = 0.0f + 0.5*cos(2*M_PI/n*(i+1));
 		g_vertex_buffer_data[k++] = 0.0f;
 	}
     k=0;
     for(int i=0;i<n;i++)
     {
-        g_vertex_buffer_data1[k++] = 5.0f;
+        g_vertex_buffer_data1[k++] = 7.0f;
 		g_vertex_buffer_data1[k++] = 0.0f;
 		g_vertex_buffer_data1[k++] = 0.0f;
 
-		g_vertex_buffer_data1[k++] = 5.0f + 0.5*sin(2*M_PI/n*i);
+		g_vertex_buffer_data1[k++] = 7.0f + 0.5*sin(2*M_PI/n*i);
 		g_vertex_buffer_data1[k++] = 0.0f + 0.5*cos(2*M_PI/n*i);
 		g_vertex_buffer_data1[k++] = 0.0f;
 
-		g_vertex_buffer_data1[k++] = 5.0f + 0.5*sin(2*M_PI/n*(i+1));
+		g_vertex_buffer_data1[k++] = 7.0f + 0.5*sin(2*M_PI/n*(i+1));
 		g_vertex_buffer_data1[k++] = 0.0f + 0.5*cos(2*M_PI/n*(i+1));
 		g_vertex_buffer_data1[k++] = 0.0f;
     }
     k=0;
     for(int i=0;i<n;i++)
     {
-        g_vertex_buffer_data3[k++] = 5.0f;
+        g_vertex_buffer_data3[k++] = 7.0f;
 		g_vertex_buffer_data3[k++] = 0.0f;
 		g_vertex_buffer_data3[k++] = 0.0f;
 
-		g_vertex_buffer_data3[k++] = 5.0f + 0.25*sin(2*M_PI/n*i);
+		g_vertex_buffer_data3[k++] = 7.0f + 0.25*sin(2*M_PI/n*i);
 		g_vertex_buffer_data3[k++] = 0.0f + 0.25*cos(2*M_PI/n*i);
 		g_vertex_buffer_data3[k++] = 0.0f;
 
-		g_vertex_buffer_data3[k++] = 5.0f + 0.25*sin(2*M_PI/n*(i+1));
+		g_vertex_buffer_data3[k++] = 7.0f + 0.25*sin(2*M_PI/n*(i+1));
 		g_vertex_buffer_data3[k++] = 0.0f + 0.25*cos(2*M_PI/n*(i+1));
 		g_vertex_buffer_data3[k++] = 0.0f;
     }
     k=0;
     for(int i=0;i<n;i++)
     {
-        g_vertex_buffer_data4[k++] = -5.0f;
+        g_vertex_buffer_data4[k++] = -7.0f;
 		g_vertex_buffer_data4[k++] = 0.0f;
 		g_vertex_buffer_data4[k++] = 0.0f;
 
-		g_vertex_buffer_data4[k++] = -5.0f + 0.25*sin(2*M_PI/n*i);
+		g_vertex_buffer_data4[k++] = -7.0f + 0.25*sin(2*M_PI/n*i);
 		g_vertex_buffer_data4[k++] = 0.0f + 0.25*cos(2*M_PI/n*i);
 		g_vertex_buffer_data4[k++] = 0.0f;
 
-		g_vertex_buffer_data4[k++] = -5.0f + 0.25*sin(2*M_PI/n*(i+1));
+		g_vertex_buffer_data4[k++] = -7.0f + 0.25*sin(2*M_PI/n*(i+1));
 		g_vertex_buffer_data4[k++] = 0.0f + 0.25*cos(2*M_PI/n*(i+1));
 		g_vertex_buffer_data4[k++] = 0.0f;
     }
     GLfloat g_vertex_buffer_data2[] = {
-        -5.0f,-0.25f,0.0f,
-        -5.0f,0.25f,0.0f,
-        5.0f,-0.25,0.0f,
+        -7.0f,-0.25f,0.0f,
+        -7.0f,0.25f,0.0f,
+        7.0f,-0.25,0.0f,
 
-        -5.0f,0.25f,0.0f,
-        5.0f,-0.25,0.0f,
-        5.0f,0.25f,0.0f,
+        -7.0f,0.25f,0.0f,
+        7.0f,-0.25,0.0f,
+        7.0f,0.25f,0.0f,
 
 
     };
@@ -213,7 +213,7 @@ void Firebeams::tick2(double dt,int range)
 bounding_box_t Firebeams::bounding_box()
 {
     float x = this->position.x, y = this->position.y;
-    float w = 5, h = 0.25;
+    float w = 5, h = 0.15;
     bounding_box_t bbox = { x,y,2*w,2*h };
     return bbox;
 }
