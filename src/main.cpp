@@ -14,6 +14,8 @@
 #include "coin2.h"
 #include "extrapoints.h"
 #include "speedboost.h"
+#include "digit.h"
+#include "segmentdisplay.h"
 
 
 
@@ -43,6 +45,10 @@ vector<Firelines> firelines;
 Magnet magnet;
 Timer magnet_time;
 Timer burnout;
+Segmentdisplay score2;
+Segmentdisplay score3;
+Segmentdisplay score4;
+Segmentdisplay score5;
 Boomerang boomerang;
 
 
@@ -59,6 +65,7 @@ float magnet_y=4.5f;
 int flag = 1;
 int extrapoints_total = 8;
 int boost_indicator = 0;
+int temp;
 
 
 Timer t60(1.0 / 60);
@@ -103,6 +110,10 @@ void draw() {
     background.draw2(VP);
     platform.draw(VP);
     boomerang.draw(VP);
+    score2.draw(VP);
+    score3.draw(VP);
+    score4.draw(VP);
+    score5.draw(VP);
 
     if(magnet.visible == 1)
     {
@@ -277,6 +288,16 @@ void tick_elements(int width,int height) {
 
     cout << "score" << "-> " << score << '\n';
 
+    temp = score;
+
+    score2.update(temp%10);
+    temp = temp / 10;
+    score3.update(temp%10);
+    temp = temp / 10;
+    score4.update(temp%10);
+    temp = temp / 10;
+    score5.update(temp%10);
+
     if(counter%360 == 0)
     {
         if(magnet.visible == 1)
@@ -374,6 +395,7 @@ void tick_elements(int width,int height) {
                 //cout << i << '\n';
                 coins[i].visible = 0;
                 score += 5;
+                //score2.update(score);
                 coins.erase(coins.begin()+i);
             }
         }
@@ -585,7 +607,14 @@ int main(int argc, char **argv) {
 
     initGL (window, width, height);
 
-    
+    score2.set_position(2.5,6.5);
+    score3.set_position(2,6.5);
+    score4.set_position(1.5,6.5);
+    score5.set_position(1,6.5);
+    score2.update(0);
+    score3.update(0);
+    score4.update(0);
+    score5.update(0);
 
     /* Draw in loop */
     while (!glfwWindowShouldClose(window)) {
