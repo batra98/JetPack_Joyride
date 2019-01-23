@@ -1,13 +1,14 @@
-#include "coin2.h"
+#include "extrapoints.h"
 #include "main.h"
 
-Coin2::Coin2(float x,float y,float z,color_t color)
+ExtraPoints::ExtraPoints(float x,float y,float z,color_t color)
 {
     this->position = glm::vec3(x,y,z);
-    int n = 100;
+    int n = 8;
+    this-> velocity = glm::vec3(-2,-1,0);
+
     this->rotation = 0;
     this->visible = 1;
-    this->velocity = glm::vec3(-2.0,0.0,0.0);
 
     GLfloat g_vertex_buffer_data[1005];
 	int k = 0;
@@ -17,8 +18,8 @@ Coin2::Coin2(float x,float y,float z,color_t color)
 		g_vertex_buffer_data[k++] = 0.0f;
 		g_vertex_buffer_data[k++] = 0.0f;
 
-		g_vertex_buffer_data[k++] = 0.0f + 0.25*sin(2*M_PI/n*i);
-		g_vertex_buffer_data[k++] = 0.0f + 0.25*cos(2*M_PI/n*i);
+		g_vertex_buffer_data[k++] = 0.0f + 0.15*sin(2*M_PI/n*i);
+		g_vertex_buffer_data[k++] = 0.0f + 0.15*cos(2*M_PI/n*i);
 		g_vertex_buffer_data[k++] = 0.0f;
 
 		g_vertex_buffer_data[k++] = 0.0f + 0.25*sin(2*M_PI/n*(i+1));
@@ -26,10 +27,10 @@ Coin2::Coin2(float x,float y,float z,color_t color)
 		g_vertex_buffer_data[k++] = 0.0f;
 	}
 
-    this->object = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data,COLOR_COIN,GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data,COLOR_EXTRAPOINTS,GL_FILL);
 }
 
-void Coin2::draw(glm::mat4 VP)
+void ExtraPoints::draw(glm::mat4 VP)
 {
     Matrices.model = glm::mat4(0.5f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
@@ -42,22 +43,26 @@ void Coin2::draw(glm::mat4 VP)
     draw3DObject(this->object);
 }
 
-void Coin2::setposition(float x,float y,float z)
+void ExtraPoints::setposition(float x,float y,float z)
 {
     this->position = glm::vec3(x,y,z);
 }
 
-void Coin2::tick(double dt)
+void ExtraPoints::tick(double dt)
 {
-    this->rotation += 1;
+    //this->rotation += 1;
+    if(this->position.y > 6 || this->position.y < -6)
+    {
+        this->velocity.y *= -1;
+    }
     this->position = this->position + (this->velocity)*(glm::vec3(dt,dt,dt));
     
 }
 
-bounding_box_t Coin2::bounding_box()
+bounding_box_t ExtraPoints::bounding_box()
 {
     float x = this->position.x, y = this->position.y;
-    float w = 0.1, h = 0.1;
+    float w = 0.25, h = 0.25;
     bounding_box_t bbox = { x,y,2*w,2*h };
     return bbox;
 }

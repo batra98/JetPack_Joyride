@@ -7,6 +7,7 @@ Coin::Coin(float x,float y,float z,color_t color)
     int n = 100;
     this->rotation = 0;
     this->visible = 1;
+    this->velocity = glm::vec3(-1.0,0.0,0.0);
 
     /*GLfloat g_vertex_buffer_data[1005];
 	int k = 0;
@@ -65,7 +66,7 @@ void Coin::setposition(float x,float y,float z)
 void Coin::tick(double dt)
 {
     this->rotation += 1;
-    this->position = this->position + (glm::vec3(-1.0,0.0,0.0))*(glm::vec3(dt,dt,dt));
+    this->position = this->position + (this->velocity)*(glm::vec3(dt,dt,dt));
     
 }
 

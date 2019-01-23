@@ -12,6 +12,8 @@
 #include "timer.h"
 #include "boomerang.h"
 #include "coin2.h"
+#include "extrapoints.h"
+#include "speedboost.h"
 
 
 
@@ -35,6 +37,8 @@ Background background;
 vector<Bullet> bullet;
 vector<Coin> coins;
 vector<Coin2> coins_2;
+vector<ExtraPoints> extrapoints;
+vector<SpeedBoost> speedboost;
 vector<Firelines> firelines;
 Magnet magnet;
 Timer magnet_time;
@@ -47,12 +51,15 @@ int counter = 0;
 int range;
 float screen_zoom = 0.52, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0;
-int n = 7,m = 3,total = 20;
-int total_firelines = 50;
+int n = 7,m = 3,total = 15;
+int total_firelines = 25;
 int i = 0,l;
 float magnet_x=4.0;
 float magnet_y=4.5f;
 int flag = 1;
+int extrapoints_total = 8;
+int boost_indicator = 0;
+
 
 Timer t60(1.0 / 60);
 double dt = (1.0/60);
@@ -149,6 +156,27 @@ void draw() {
         else if(firelines[i].visible == 1)
             firelines[i].draw2(VP);
     }
+    for(i=0;i<extrapoints_total;i++)
+    {
+        if(extrapoints[i].visible == 1)
+        {
+            extrapoints[i].draw(VP);
+        }
+        else
+        {
+            extrapoints.erase(extrapoints.begin()+i);
+        }
+
+        if(speedboost[i].visible == 1)
+        {
+            speedboost[i].draw(VP);
+        }
+        else
+        {
+            speedboost.erase(speedboost.begin()+i);
+        }
+        
+    }
     //coins[0].draw(VP);
     //coins[1].draw(VP);
     //coin.draw(VP);
@@ -185,6 +213,7 @@ void tick_input(GLFWwindow *window) {
         if(player.acceleration.x * player.velocity.x > 0)
         {
             player.velocity.x = 0;
+            
             player.acceleration.x = 0;
         }
 
@@ -256,10 +285,30 @@ void tick_elements(int width,int height) {
         }
         
     }
-
-    if(counter%2 == 0)
+    if(counter%240 == 0)
     {
-        for(i=0;i<bullet.size();i++)
+        if(boost_indicator == 1)
+        {
+            boost_indicator = 0;
+            //speedboost[i].visible = 0;
+            //boost_indicator = 1;
+            //player.acceleration.x = 10;
+            platform.velocity.x = 1;
+            for(i=0;i<total_firelines;i++)
+            {
+                firelines[i].velocity.x = -1;
+            }
+            for(i=0;i<n*m*total;i++)
+            {
+                coins[i].velocity.x = -1;
+                coins_2[i].velocity.x = -2;
+            }
+        }
+    }
+
+    if(counter%300 == 0)
+    {
+        for(i=0;i<total_firelines;i++)
         {
             if(firelines[i].visible == 1)
                 firelines[i].visible = 0;
@@ -368,6 +417,34 @@ void tick_elements(int width,int height) {
         
     }
 
+    for(i=0;i<extrapoints_total;i++)
+    {
+        extrapoints[i].tick(dt);
+        if(detect_collision(extrapoints[i].bounding_box(),player.bounding_box(),0)==1)
+        {
+            score += 10;
+            extrapoints[i].visible = 0;
+        }
+        speedboost[i].tick(dt);
+        if(detect_collision(speedboost[i].bounding_box(),player.bounding_box(),0) == 1)
+        {
+            speedboost[i].visible = 0;
+            boost_indicator = 1;
+            //player.acceleration.x = 10;
+            platform.velocity.x = 10;
+            for(i=0;i<total_firelines;i++)
+            {
+                firelines[i].velocity.x = -10;
+            }
+            for(i=0;i<n*m*total;i++)
+            {
+                coins[i].velocity.x = -10;
+                coins_2[i].velocity.x = -10;
+            }
+        }
+
+    }
+
     
     //cout << firebeam2.position.y << '\n';
 
@@ -456,6 +533,18 @@ void initGL(GLFWwindow *window, int width, int height) {
     for(l=i;l<total_firelines;l++)
     {
         firelines.push_back(Firelines(rand()%200+1,-(float)(rand()%4+1),-1,COLOR_BATMAN_EYE));
+    }
+
+    for(i=0;i<extrapoints_total/2;i++)
+    {
+        extrapoints.push_back(ExtraPoints(rand()%200+1,(float)(rand()%4+1),-1,COLOR_BATMAN_EYE));
+        speedboost.push_back(SpeedBoost(rand()%200+1,(float)(rand()%4+1),-1,COLOR_BATMAN_EYE));
+    }
+
+    for(l=i;l<total_firelines;l++)
+    {
+        extrapoints.push_back(ExtraPoints(rand()%200+1,-(float)(rand()%4+1),-1,COLOR_BATMAN_EYE));
+        speedboost.push_back(SpeedBoost(rand()%200+1,-(float)(rand()%4+1),-1,COLOR_BATMAN_EYE));
     }
 
     

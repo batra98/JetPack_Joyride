@@ -7,6 +7,7 @@ Firelines::Firelines(float x,float y,float z,color_t color)
     //this->rotation = 0;
     this->visible = 0;
     this->rotation = rand()%90+1;
+    this->velocity = glm::vec3(-1.0,0.0,0.0);
 
     int n = 6;
     GLfloat g_vertex_buffer_data[105];
@@ -99,7 +100,7 @@ void Firelines::setposition(float x,float y,float z)
 void Firelines::tick(double dt)
 {
     //this->rotation += 1;
-    this->position = this->position + (glm::vec3(-1.0,0.0,0.0))*(glm::vec3(dt,dt,dt));
+    this->position = this->position + (this->velocity)*(glm::vec3(dt,dt,dt));
     
 }
 

@@ -20,3 +20,5 @@ const color_t COLOR_MAGNET_BODY = {192,192,192};
 const color_t COLOR_MAGNET_FRONT = {220,20,60};
 const color_t COLOR_BATMAN_WATER = {0, 167, 190};
 const color_t COLOR_BOOMERANG = {160,82,45};
+const color_t COLOR_EXTRAPOINTS = {255, 227, 1};
+const color_t COLOR_SPEEDBOOST = {255,128,206};

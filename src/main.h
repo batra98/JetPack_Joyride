@@ -98,5 +98,7 @@ extern const color_t COLOR_MAGNET_BODY;
 extern const color_t COLOR_MAGNET_FRONT;
 extern const color_t COLOR_BATMAN_WATER;
 extern const color_t COLOR_BOOMERANG;
+extern const color_t COLOR_EXTRAPOINTS;
+extern const color_t COLOR_SPEEDBOOST;
 
 #endif
