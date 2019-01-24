@@ -22,3 +22,7 @@ const color_t COLOR_BATMAN_WATER = {0, 167, 190};
 const color_t COLOR_BOOMERANG = {160,82,45};
 const color_t COLOR_EXTRAPOINTS = {255, 227, 1};
 const color_t COLOR_SPEEDBOOST = {255,128,206};
+const color_t COLOR_SUPERMAN_HAIR = {144,84,36};
+const color_t COLOR_SUPERMAN_BODY = {40,131,186};
+const color_t COLOR_SUPERMAN_CAPE = {200,0,0};
+const color_t COLOR_SUPERMAN_BULLET = {255,235,0};

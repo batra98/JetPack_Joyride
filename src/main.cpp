@@ -16,6 +16,8 @@
 #include "speedboost.h"
 #include "digit.h"
 #include "segmentdisplay.h"
+#include "villian.h"
+#include "laser.h"
 
 
 
@@ -31,12 +33,14 @@ GLFWwindow *window;
 **************************/
 
 Player player;
+Villian villian;
 Platform platform;
 Firebeams firebeams;
 Firebeams firebeam2;
 Background background;
 //Coin coin;
 vector<Bullet> bullet;
+vector<Laser> laser;
 vector<Coin> coins;
 vector<Coin2> coins_2;
 vector<ExtraPoints> extrapoints;
@@ -53,6 +57,7 @@ Boomerang boomerang;
 
 
 int score = 0;
+int lives = 4;
 int counter = 0;
 int range;
 float screen_zoom = 0.52, screen_center_x = 0, screen_center_y = 0;
@@ -105,108 +110,149 @@ void draw() {
     glm::mat4 MVP;  // MVP = Projection * View * Model
 
     // Scene render
+    //cout << counter << '\n';
+    if(counter < 4500)
+    {
     
-    background.draw(VP);
-    background.draw2(VP);
-    platform.draw(VP);
-    boomerang.draw(VP);
-    score2.draw(VP);
-    score3.draw(VP);
-    score4.draw(VP);
-    score5.draw(VP);
+        background.draw(VP);
+        background.draw2(VP);
+        platform.draw(VP);
+        boomerang.draw(VP);
+        score2.draw(VP);
+        score3.draw(VP);
+        score4.draw(VP);
+        score5.draw(VP);
 
-    if(magnet.visible == 1)
-    {
-        magnet.draw(VP);
-        //if(flag == 1)
-        //{
-            if(player.position.x < magnet_x && player.position.y < magnet_y)
-            {
-                player.acceleration = glm::vec3(magnet_x*2,magnet_y*2,0.0);
-                player.up = 0;
-                player.velocity = glm::vec3(1.0,1.0,0.0);
-                flag = 0;
-            }
-            else if(player.position.x > magnet_x && player.position.y > magnet_y)
-            {
-                //cout << "hello" <<'\n';
-                player.acceleration = glm::vec3(-magnet_x*2,-magnet_y*2,0.0);
-                player.up = 0;
-                player.velocity = glm::vec3(-1.0,-1.0,0.0);
-                flag = 0;
-            }
-            else if(player.position.x < magnet_x && player.position.y > magnet_y)
-            {
-                player.acceleration = glm::vec3(magnet_x*2,-magnet_y*2,0.0);
-                player.up = 0;
-                player.velocity = glm::vec3(1.0,-1.0,0.0);
-                flag = 0;
-            }
-            else if(player.position.x > magnet_x && player.position.y < magnet_y)
-            {
-                player.acceleration = glm::vec3(-magnet_x*2,magnet_y*2,0.0);
-                player.up = 0;
-                player.velocity = glm::vec3(-1.0,1.0,0.0);
-                flag = 0;
-            }
-        //}
-    }
-    for(i=0;i<n*m*total;i++)
-    {
-        //cout << coins[i].position.x << '\n';
-        if(coins[i].visible == 1)
-        coins[i].draw(VP);
+        if(magnet.visible == 1)
+        {
+            magnet.draw(VP);
+            //if(flag == 1)
+            //{
+                if(player.position.x < magnet_x && player.position.y < magnet_y)
+                {
+                    player.acceleration = glm::vec3(magnet_x*2,magnet_y*2,0.0);
+                    player.up = 0;
+                    player.velocity = glm::vec3(1.0,1.0,0.0);
+                    flag = 0;
+                }
+                else if(player.position.x > magnet_x && player.position.y > magnet_y)
+                {
+                    //cout << "hello" <<'\n';
+                    player.acceleration = glm::vec3(-magnet_x*2,-magnet_y*2,0.0);
+                    player.up = 0;
+                    player.velocity = glm::vec3(-1.0,-1.0,0.0);
+                    flag = 0;
+                }
+                else if(player.position.x < magnet_x && player.position.y > magnet_y)
+                {
+                    player.acceleration = glm::vec3(magnet_x*2,-magnet_y*2,0.0);
+                    player.up = 0;
+                    player.velocity = glm::vec3(1.0,-1.0,0.0);
+                    flag = 0;
+                }
+                else if(player.position.x > magnet_x && player.position.y < magnet_y)
+                {
+                    player.acceleration = glm::vec3(-magnet_x*2,magnet_y*2,0.0);
+                    player.up = 0;
+                    player.velocity = glm::vec3(-1.0,1.0,0.0);
+                    flag = 0;
+                }
+            //}
+        }
+        for(i=0;i<n*m*total;i++)
+        {
+            //cout << coins[i].position.x << '\n';
+            if(coins[i].visible == 1)
+            coins[i].draw(VP);
 
-        if(coins_2[i].visible == 1)
-        coins_2[i].draw(VP);
-    }
-    for(i=0;i<total_firelines;i++)
-    {
-        if(firelines[i].visible == 0)
-            firelines[i].draw(VP);
-        else if(firelines[i].visible == 1)
-            firelines[i].draw2(VP);
-    }
-    for(i=0;i<extrapoints_total;i++)
-    {
-        if(extrapoints[i].visible == 1)
-        {
-            extrapoints[i].draw(VP);
+            if(coins_2[i].visible == 1)
+            coins_2[i].draw(VP);
         }
-        else
+        for(i=0;i<total_firelines;i++)
         {
-            extrapoints.erase(extrapoints.begin()+i);
+            if(firelines[i].visible == 0)
+                firelines[i].draw(VP);
+            else if(firelines[i].visible == 1)
+                firelines[i].draw2(VP);
         }
+        for(i=0;i<extrapoints_total;i++)
+        {
+            if(extrapoints[i].visible == 1)
+            {
+                extrapoints[i].draw(VP);
+            }
+            else
+            {
+                extrapoints.erase(extrapoints.begin()+i);
+            }
 
-        if(speedboost[i].visible == 1)
-        {
-            speedboost[i].draw(VP);
+            if(speedboost[i].visible == 1)
+            {
+                speedboost[i].draw(VP);
+            }
+            else
+            {
+                speedboost.erase(speedboost.begin()+i);
+            }
+            
         }
-        else
-        {
-            speedboost.erase(speedboost.begin()+i);
-        }
+        //coins[0].draw(VP);
+        //coins[1].draw(VP);
+        //coin.draw(VP);
         
-    }
-    //coins[0].draw(VP);
-    //coins[1].draw(VP);
-    //coin.draw(VP);
-    for(i=0;i<bullet.size();i++)
-        bullet[i].draw(VP);
-    if(firebeams.visible == 0)
-        firebeams.draw2(VP);
-    else if(firebeams.visible == 1)
-        firebeams.draw(VP);
+        
+            /*for(i=0;i<laser.size();i++)
+            {
+                if(laser[i].visible == 0)
+                laser[i].draw(VP);
+            }*/
+        
+        for(i=0;i<bullet.size();i++)
+            bullet[i].draw(VP);
+        if(firebeams.visible == 0)
+            firebeams.draw2(VP);
+        else if(firebeams.visible == 1)
+            firebeams.draw(VP);
 
-    if(firebeam2.visible == 0)    
-        firebeam2.draw2(VP);
-    else if(firebeam2.visible == 1)
-        firebeam2.draw(VP);
-    if(player.up == 0)
-        player.draw2(VP);
-    else if(player.up == 1)
-        player.draw(VP);    
-   
+        if(firebeam2.visible == 0)    
+            firebeam2.draw2(VP);
+        else if(firebeam2.visible == 1)
+            firebeam2.draw(VP);
+        if(player.up == 0)
+            player.draw2(VP);
+        else if(player.up == 1)
+            player.draw(VP);
+
+              
+    }
+    else
+    {
+        background.draw(VP);
+        background.draw2(VP);
+        platform.draw(VP);
+        //boomerang.draw(VP);
+        score2.draw(VP);
+        score3.draw(VP);
+        score4.draw(VP);
+        score5.draw(VP);
+        for(i=0;i<laser.size();i++)
+        {
+            if(laser[i].visible == 0)
+                laser[i].draw(VP);
+        }
+
+        for(i=0;i<bullet.size();i++)
+            bullet[i].draw(VP);
+        if(player.up == 0)
+            player.draw2(VP);
+        else if(player.up == 1)
+            player.draw(VP);
+
+            
+
+
+        villian.draw(VP);
+    }
 }
 
 
@@ -219,6 +265,7 @@ void tick_input(GLFWwindow *window) {
     int s = glfwGetKey(window,GLFW_KEY_S);
     int space = glfwGetKey(window,GLFW_KEY_SPACE);
     //cout << scroll << '\n';
+
     if(magnet.visible == 0)
     {
         if(player.acceleration.x * player.velocity.x > 0)
@@ -286,7 +333,7 @@ void tick_input(GLFWwindow *window) {
 
 void tick_elements(int width,int height) {
 
-    cout << "score" << "-> " << score << '\n';
+    //cout << "lives" << "-> " << lives << '\n';
 
     temp = score;
 
@@ -358,13 +405,37 @@ void tick_elements(int width,int height) {
             magnet.visible = 1;
           
     }
+
+    if(counter%60 == 0)
+        laser.push_back(Laser(villian.position.x,villian.position.y+0.3,villian.position.z,COLOR_SUPERMAN_CAPE,villian.velocity));
+        
     player.tick(dt,magnet.visible);
+    villian.tick(dt,magnet.visible);
     platform.tick(dt);
     firebeams.tick(dt,range);
     firebeam2.tick2(dt,range);
     background.tick();
     magnet.tick(dt);
     boomerang.tick(dt);
+
+    //cout << laser.size() << '\n';
+    for(i=0;i<laser.size();i++)
+    {
+        //if(counter%480 == 0)
+        laser[i].tick(dt,villian.position);
+        //cout << laser[i].velocity.y << '\n';
+        if(laser[i].position.x < -7)
+        {
+            laser.erase(laser.begin()+i);
+            continue;
+        }
+        if(laser[i].position.y < -7)
+        {
+            laser.erase(laser.begin()+i);
+            continue;
+        }
+
+    }
     //cout << bullet.size() << '\n';
     for(i=0;i<bullet.size();i++)
     {
@@ -467,6 +538,19 @@ void tick_elements(int width,int height) {
 
     }
 
+    for(i=0;i<laser.size();i++)
+    {
+        if(laser[i].visible == 0)
+        {
+            if(detect_collision(laser[i].bounding_box(),player.bounding_box(),0) == 1)
+            {
+                lives -- ;
+                laser[i].visible = 1;
+            }
+        }
+
+    }
+
     
     //cout << firebeam2.position.y << '\n';
 
@@ -518,6 +602,7 @@ void initGL(GLFWwindow *window, int width, int height) {
     
     
     player = Player(-2,-2,0,COLOR_RED);
+    villian = Villian(6,0,0,COLOR_BACKGROUND);
     platform = Platform(0,0,0,COLOR_BLACK);
     firebeams = Firebeams(0,-5,-2,COLOR_RED);
     firebeam2 = Firebeams(0,5,-2,COLOR_RED);

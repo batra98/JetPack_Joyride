@@ -100,5 +100,9 @@ extern const color_t COLOR_BATMAN_WATER;
 extern const color_t COLOR_BOOMERANG;
 extern const color_t COLOR_EXTRAPOINTS;
 extern const color_t COLOR_SPEEDBOOST;
+extern const color_t COLOR_SUPERMAN_HAIR;
+extern const color_t COLOR_SUPERMAN_BODY;
+extern const color_t COLOR_SUPERMAN_CAPE;
+extern const color_t COLOR_SUPERMAN_BULLET;
 
 #endif
