@@ -13,6 +13,7 @@ Player::Player(float x,float y, float z, color_t color)
     this->velocity.y = 0;
     this->velocity.z = 0;
     this->rotation = 0;
+    this->flag = 0;
 
     this->size = 0.20f;
 
@@ -162,40 +163,74 @@ void Player::setposition(float x,float y,float z)
     this->position = glm::vec3(x,y,z);
 }
 
-void Player::tick(double dt,int visible)
+void Player::tick(double dt,int visible,int ring_touch)
 {
-    if(visible==0)
+    if(ring_touch == 0)
     {
-        if(this->position.y > -6.5)
+        if(visible==0)
         {
-            
-                this->acceleration.y = -2;
-                this->up = 0;
-            
-        }
-        else if(this->position.y < -6.5)
-        {
-            if(this->up == 0)
+            if(this->position.y > -6.5)
+            {
+                
+                    this->acceleration.y = -2;
+                    this->up = 0;
+                
+            }
+            else if(this->position.y < -6.5)
+            {
+                if(this->up == 0)
+                    this->velocity.y = 0;
+                this->acceleration.y = 0;
+            }
+
+            if(this->position.y > 7)
                 this->velocity.y = 0;
-            this->acceleration.y = 0;
+
         }
-
-        if(this->position.y > 7)
-            this->velocity.y = 0;
-
-    }
-    else if(visible == 1)
-    {
-        if(this->position.y > 5 || this->position.y < -4) 
+        else if(visible == 1)
         {
-            //std::cout << position.y << '\n';
-            this->velocity.y = 0;
-            this->acceleration.y = 0;
-        }
+            if(this->position.y > 5 || this->position.y < -4) 
+            {
+                //std::cout << position.y << '\n';
+                this->velocity.y = 0;
+                this->acceleration.y = 0;
+            }
 
+        }
+        this->velocity = this->velocity + this->acceleration*(glm::vec3(dt,dt,dt));
+        this->position = this->position + this->velocity*(glm::vec3(dt,dt,dt));
     }
-    this->velocity = this->velocity + this->acceleration*(glm::vec3(dt,dt,dt));
-    this->position = this->position + this->velocity*(glm::vec3(dt,dt,dt));
+    else if(ring_touch == 1)
+    {
+        if(this->flag == 0)
+        {
+            //std::cout << "hello" << '\n';
+            this->velocity = glm::vec3(1,+1,0);
+        }
+        if(this->position.x > 4.2)
+        {
+            this->velocity.x = -1;
+            this->position.x = 4;
+            this->flag = 1;
+        }
+        this->position += this->velocity*(glm::vec3(dt,dt,dt));
+    }
+    else if(ring_touch == 2)
+    {
+        if(this->flag == 0)
+        {
+            //std::cout << "hello" << '\n';
+            this->velocity = glm::vec3(1,-1,0);
+        }
+        if(this->position.x > 4.2)
+        {
+            this->velocity.x = -1;
+            this->position.x = 4;
+            this->flag = 1;
+        }
+        this->position += this->velocity*(glm::vec3(dt,dt,dt));
+    }
+    
     
 }
 

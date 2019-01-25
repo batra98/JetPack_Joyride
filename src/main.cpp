@@ -20,6 +20,8 @@
 #include "laser.h"
 #include "krypton.h"
 #include "heart.h"
+#include "ring.h"
+
 
 
 
@@ -59,9 +61,10 @@ Segmentdisplay score4;
 Segmentdisplay score5;
 Boomerang boomerang;
 vector<Heart> heart;
+Ring ring;
 
 
-
+int ring_touch = 0;
 int superman_freeze = 0 ;
 int score = 0;
 int lives = 4;
@@ -165,6 +168,11 @@ void draw() {
                     flag = 0;
                 }
             //}
+        }
+
+        if(ring.visible == 1)
+        {
+            ring.draw(VP);
         }
         for(i=0;i<n*m*total;i++)
         {
@@ -287,6 +295,7 @@ void tick_input(GLFWwindow *window) {
         {
             if(player.acceleration.x * player.velocity.x > 0)
             {
+                if(ring_touch == 0)
                 player.velocity.x = 0;
                 
                 player.acceleration.x = 0;
@@ -342,6 +351,7 @@ void tick_input(GLFWwindow *window) {
     {
         if(player.acceleration.x * player.velocity.x > 0)
             {
+                if(ring_touch == 0)
                 player.velocity.x = 0;
                 
                 player.acceleration.x = 0;
@@ -402,6 +412,14 @@ void tick_elements(int width,int height) {
 
     if(counter < 3500)
     {
+        if(player.position.x < 2.0)
+        {
+            if(ring_touch == 1)
+            ring_touch = 0;
+
+            if(ring_touch == 2)
+            ring_touch = 0;
+        }
 
         if(counter%360 == 0)
         {
@@ -410,6 +428,15 @@ void tick_elements(int width,int height) {
                 magnet.visible = 0;
             }
             
+            
+        }
+
+        if(counter%(360*3) == 0)
+        {
+            if(ring.visible == 1)
+            {
+                ring.visible = 0;
+            }
         }
         if(counter%240 == 0)
         {
@@ -464,10 +491,18 @@ void tick_elements(int width,int height) {
             
         }
 
+        if(counter%(480*5) == 0)
+        {
+            if(ring.visible == 1)
+                ring.visible = 0;
+            else
+                ring.visible = 1;
+        }
+
         if(counter%60 == 0 && superman_freeze == 0)
             laser.push_back(Laser(villian.position.x,villian.position.y+0.3,villian.position.z,COLOR_SUPERMAN_CAPE,villian.velocity));
             
-        player.tick(dt,magnet.visible);
+        player.tick(dt,magnet.visible,ring_touch);
         villian.tick(dt,magnet.visible);
         platform.tick(dt);
         firebeams.tick(dt,range);
@@ -641,6 +676,23 @@ void tick_elements(int width,int height) {
             //cout << "detected" << '\n';
             score -= 1;
         }
+
+        if(ring.visible == 1)
+        {
+            if(detect_collision(player.bounding_box(),ring.bounding_box(),0) == 1 && ring_touch == 0)
+            {
+                //cout << "touch" << '\n';
+                ring_touch = 1;
+                player.flag = 0;
+            }
+
+            if(detect_collision(player.bounding_box(),ring.bounding_box2(),0) == 1 && ring_touch == 0)
+            {
+                //cout << "touch" << '\n';
+                ring_touch = 2;
+                player.flag = 0;
+            }
+        }
     }
     else
     {
@@ -682,7 +734,7 @@ void tick_elements(int width,int height) {
         if(counter%60 == 0 && superman_freeze == 0)
             laser.push_back(Laser(villian.position.x,villian.position.y+0.3,villian.position.z,COLOR_SUPERMAN_CAPE,villian.velocity));
 
-        player.tick(dt,magnet.visible);
+        player.tick(dt,magnet.visible,ring_touch);
         villian.tick(dt,magnet.visible);
         platform.tick(dt);
 
@@ -784,7 +836,7 @@ void tick_elements(int width,int height) {
     //coins[1].tick(dt);
     //coin.tick(dt);
     //cout << player.acceleration.x << " " << player.acceleration.y << " " << player.acceleration.z << " "<< screen_zoom << '\n';
-    //cout << player.position.x << " " << player.position.y << " " << player.position.z << " "<< screen_zoom << '\n';
+    cout << player.position.x << " " << player.position.y << " " << player.position.z << " "<< screen_zoom << '\n';
    
     
 
@@ -802,11 +854,12 @@ void initGL(GLFWwindow *window, int width, int height) {
     platform = Platform(0,0,0,COLOR_BLACK);
     firebeams = Firebeams(0,-5,-2,COLOR_RED);
     firebeam2 = Firebeams(0,5,-2,COLOR_RED);
-    background = Background(0,0,-5,COLOR_BATMAN_BELT);
+    background = Background(0,0,-1,COLOR_BATMAN_BELT);
     magnet = Magnet(magnet_x,magnet_y,0,COLOR_COIN);
     magnet_time = Timer(4);
     burnout = Timer(2);
     boomerang = Boomerang(7,0,0,COLOR_BATMAN_EYE);
+    ring = Ring(0,0,0,COLOR_BACKGROUND);
     //bullet = Bullet(0,0,0,COLOR_BATMAN_JETPACK);
 
     n = rand() % 15 + 1;

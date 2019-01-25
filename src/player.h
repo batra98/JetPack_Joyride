@@ -13,10 +13,11 @@ public:
     void draw2(glm::mat4 VP);
     void draw(glm::mat4 VP);
     void setposition(float x,float y,float z);
-    void tick(double dt,int visible);
+    void tick(double dt,int visible,int ring_touch);
     bounding_box_t bounding_box();
     double size;
     float rotation;
+    int flag;
     int up;
 
 private:

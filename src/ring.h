@@ -13,6 +13,7 @@ public:
     void draw(glm::mat4 VP);
     void setposition(float x,float y,float z);
     bounding_box_t bounding_box();
+    bounding_box_t bounding_box2();
     void tick(double dt);
     float rotation;
     int visible;

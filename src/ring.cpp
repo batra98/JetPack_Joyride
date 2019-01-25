@@ -77,34 +77,7 @@ void Ring::setposition(float x,float y,float z)
 
 void Ring::tick(double dt)
 {
-    /*if(this->position.x < 0)
-    {
-        if(this->rotation > -180)
-        {
-            this->rotation -= 5;
-        }
-        else
-        {
-            this->position.x = 0.1;
-            this->velocity *= -1;
-        }
-            
-    }
-    if(this->position.x > 12)
-    {
-        if(this->rotation < 0)
-        {
-            this->rotation += 5;
-        }
-        else
-        {
-            this->position.x = 11.9;
-            this->velocity *= -1;
-        }
-    }
-
-    //this->velocity += this->acceleration*(glm::vec3(dt,dt,dt));
-    this->position = this->position + this->velocity*(glm::vec3(dt,dt,dt));*/
+   //this->position += this->velocity * (glm::vec3(dt,dt,dt));
 
 
     
@@ -113,6 +86,18 @@ void Ring::tick(double dt)
 bounding_box_t Ring::bounding_box()
 {
     float x = this->position.x+2.1, y = this->position.y-2.1;
+    /*if(this->rotation <= -180)
+    {
+        y = this->position.y + 2;
+    }*/
+    float w = 0.05, h = 0.05;
+    bounding_box_t bbox = { x,y,2*w,2*h };
+    return bbox;
+}
+
+bounding_box_t Ring::bounding_box2()
+{
+    float x = this->position.x+2.1, y = this->position.y+2.1;
     /*if(this->rotation <= -180)
     {
         y = this->position.y + 2;
