@@ -104,5 +104,8 @@ extern const color_t COLOR_SUPERMAN_HAIR;
 extern const color_t COLOR_SUPERMAN_BODY;
 extern const color_t COLOR_SUPERMAN_CAPE;
 extern const color_t COLOR_SUPERMAN_BULLET;
+extern const color_t COLOR_KRYPTON;
+extern const color_t COLOR_FREEZE_CAPE;
+extern const color_t COLOR_FREEZE_BODY;
 
 #endif

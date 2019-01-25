@@ -18,6 +18,9 @@
 #include "segmentdisplay.h"
 #include "villian.h"
 #include "laser.h"
+#include "krypton.h"
+#include "heart.h"
+
 
 
 
@@ -41,6 +44,7 @@ Background background;
 //Coin coin;
 vector<Bullet> bullet;
 vector<Laser> laser;
+vector<Krypton> krypton;
 vector<Coin> coins;
 vector<Coin2> coins_2;
 vector<ExtraPoints> extrapoints;
@@ -54,8 +58,11 @@ Segmentdisplay score3;
 Segmentdisplay score4;
 Segmentdisplay score5;
 Boomerang boomerang;
+vector<Heart> heart;
 
 
+
+int superman_freeze = 0 ;
 int score = 0;
 int lives = 4;
 int counter = 0;
@@ -111,7 +118,7 @@ void draw() {
 
     // Scene render
     //cout << counter << '\n';
-    if(counter < 4500)
+    if(counter < 3500)
     {
     
         background.draw(VP);
@@ -243,15 +250,23 @@ void draw() {
 
         for(i=0;i<bullet.size();i++)
             bullet[i].draw(VP);
+
+        for(i=0;i<krypton.size();i++)
+            krypton[i].draw(VP);    
         if(player.up == 0)
             player.draw2(VP);
         else if(player.up == 1)
             player.draw(VP);
 
-            
+        for(i=0;i<lives;i++)
+        {
+            heart[i].draw(VP);
+        }    
 
-
-        villian.draw(VP);
+        if(superman_freeze == 0)
+            villian.draw(VP);
+        else
+            villian.draw2(VP);
     }
 }
 
@@ -264,59 +279,99 @@ void tick_input(GLFWwindow *window) {
     int w = glfwGetKey(window,GLFW_KEY_W);
     int s = glfwGetKey(window,GLFW_KEY_S);
     int space = glfwGetKey(window,GLFW_KEY_SPACE);
+    int f = glfwGetKey(window,GLFW_KEY_F);
     //cout << scroll << '\n';
-
-    if(magnet.visible == 0)
+    if(counter < 3500)
     {
-        if(player.acceleration.x * player.velocity.x > 0)
+        if(magnet.visible == 0)
         {
-            player.velocity.x = 0;
-            
-            player.acceleration.x = 0;
-        }
+            if(player.acceleration.x * player.velocity.x > 0)
+            {
+                player.velocity.x = 0;
+                
+                player.acceleration.x = 0;
+            }
 
-        if(left==1)
-        {
-            player.velocity.x = -2;
-            player.acceleration.x = 1;
+            if(left==1)
+            {
+                player.velocity.x = -2;
+                player.acceleration.x = 1;
+            }
+            if(right == 1)
+            {
+                player.velocity.x = 2;
+                player.acceleration.x = -1;
+            }
+            if(up == 1)
+            {
+                player.up = 1;
+                player.velocity.y = 2;
+            }
+            if(space==1)
+            {
+                if(counter%10 == 0)
+                bullet.push_back(Bullet(player.position.x,player.position.y,player.position.z,COLOR_BATMAN_JETPACK));
+            }
         }
-        if(right == 1)
+        else if(magnet.visible == 1)
         {
-            player.velocity.x = 2;
-            player.acceleration.x = -1;
-        }
-        if(up == 1)
-        {
-            player.up = 1;
-            player.velocity.y = 2;
-        }
-        if(space==1)
-        {
-            bullet.push_back(Bullet(player.position.x,player.position.y,player.position.z,COLOR_BATMAN_JETPACK));
+
+            if(left==1)
+            {
+                player.velocity.x = -20;
+                //player.acceleration.x += -1;
+            }
+            if(right == 1)
+            {
+                player.velocity.x = 20;
+                //player.acceleration.x += 1;
+            }
+            if(up == 1)
+            {
+                player.up = 1;
+                player.velocity.y = 20;
+            }
+            if(space==1)
+            {
+                if(counter%10 == 0)
+                bullet.push_back(Bullet(player.position.x,player.position.y,player.position.z,COLOR_BATMAN_JETPACK));
+            }
         }
     }
-    else if(magnet.visible == 1)
+    else
     {
+        if(player.acceleration.x * player.velocity.x > 0)
+            {
+                player.velocity.x = 0;
+                
+                player.acceleration.x = 0;
+            }
 
-        if(left==1)
-        {
-            player.velocity.x = -20;
-            //player.acceleration.x += -1;
-        }
-        if(right == 1)
-        {
-            player.velocity.x = 20;
-            //player.acceleration.x += 1;
-        }
-        if(up == 1)
-        {
-            player.up = 1;
-            player.velocity.y = 20;
-        }
-        if(space==1)
-        {
-            bullet.push_back(Bullet(player.position.x,player.position.y,player.position.z,COLOR_BATMAN_JETPACK));
-        }
+            if(left==1)
+            {
+                player.velocity.x = -2;
+                player.acceleration.x = 1;
+            }
+            if(right == 1)
+            {
+                player.velocity.x = 2;
+                player.acceleration.x = -1;
+            }
+            if(up == 1)
+            {
+                player.up = 1;
+                player.velocity.y = 2;
+            }
+            if(space==1)
+            {
+                if(counter%10 == 0)
+                bullet.push_back(Bullet(player.position.x,player.position.y,player.position.z,COLOR_BATMAN_JETPACK));
+            }
+            if(f == 1)
+            {
+                if(counter%10 == 0)
+                krypton.push_back(Krypton(player.position.x,player.position.y,player.position.z,COLOR_GREEN));
+            }
     }
     /*if(w==1)
     {
@@ -345,242 +400,383 @@ void tick_elements(int width,int height) {
     temp = temp / 10;
     score5.update(temp%10);
 
-    if(counter%360 == 0)
+    if(counter < 3500)
     {
-        if(magnet.visible == 1)
+
+        if(counter%360 == 0)
         {
-            magnet.visible = 0;
+            if(magnet.visible == 1)
+            {
+                magnet.visible = 0;
+            }
+            
         }
-        
-    }
-    if(counter%240 == 0)
-    {
-        if(boost_indicator == 1)
+        if(counter%240 == 0)
         {
-            boost_indicator = 0;
-            //speedboost[i].visible = 0;
-            //boost_indicator = 1;
-            //player.acceleration.x = 10;
-            platform.velocity.x = 1;
+            if(boost_indicator == 1)
+            {
+                boost_indicator = 0;
+                //speedboost[i].visible = 0;
+                //boost_indicator = 1;
+                //player.acceleration.x = 10;
+                platform.velocity.x = 1;
+                for(i=0;i<total_firelines;i++)
+                {
+                    firelines[i].velocity.x = -1;
+                }
+                for(i=0;i<n*m*total;i++)
+                {
+                    coins[i].velocity.x = -1;
+                    coins_2[i].velocity.x = -2;
+                }
+            }
+        }
+
+        if(counter%300 == 0)
+        {
             for(i=0;i<total_firelines;i++)
             {
-                firelines[i].velocity.x = -1;
-            }
-            for(i=0;i<n*m*total;i++)
-            {
-                coins[i].velocity.x = -1;
-                coins_2[i].velocity.x = -2;
+                if(firelines[i].visible == 1)
+                    firelines[i].visible = 0;
             }
         }
-    }
 
-    if(counter%300 == 0)
-    {
+        if(counter%300 == 0)
+        {
+            if(firebeam2.flag == 0)
+            {
+                firebeam2.flag = 1;
+                //firebeam2.visible = ;
+            }
+            if(firebeams.flag == 0)
+            {
+                firebeams.flag = 1;
+                //firebeams.visible = 0;
+            }
+        }
+
+        if(counter%(480*4) == 0)
+        {
+            if(magnet.visible == 1)
+                magnet.visible = 0;
+            else
+                magnet.visible = 1;
+            
+        }
+
+        if(counter%60 == 0 && superman_freeze == 0)
+            laser.push_back(Laser(villian.position.x,villian.position.y+0.3,villian.position.z,COLOR_SUPERMAN_CAPE,villian.velocity));
+            
+        player.tick(dt,magnet.visible);
+        villian.tick(dt,magnet.visible);
+        platform.tick(dt);
+        firebeams.tick(dt,range);
+        firebeam2.tick2(dt,range);
+        background.tick();
+        magnet.tick(dt);
+        boomerang.tick(dt);
+
+        cout << counter << '\n';
+        for(i=0;i<laser.size();i++)
+        {
+            //if(counter%480 == 0)
+            laser[i].tick(dt,villian.position);
+            //cout << laser[i].velocity.y << '\n';
+            if(laser[i].position.x < -7)
+            {
+                laser.erase(laser.begin()+i);
+                continue;
+            }
+            if(laser[i].position.y < -7)
+            {
+                laser.erase(laser.begin()+i);
+                continue;
+            }
+
+        }
+        //cout << bullet.size() << '\n';
+        for(i=0;i<bullet.size();i++)
+        {
+            bullet[i].tick(dt);
+            if(bullet[i].position.x > 7)
+            {
+                bullet.erase(bullet.begin()+i);
+                continue;
+            }
+            if(bullet[i].position.y < -7)
+            {
+                bullet.erase(bullet.begin()+i);
+                continue;
+            }
+        }
+
+        
+
+        //cout << "size =" +coins.size() << '\n';
+        
+        for(i = 0;i<n*m*total;i++)
+        {
+            coins[i].tick(dt);
+            if(coins[i].visible == 1)
+            {
+                if(detect_collision(coins[i].bounding_box(),player.bounding_box(),0) == 1)
+                {
+                    //cout << i << '\n';
+                    coins[i].visible = 0;
+                    score += 5;
+                    //score2.update(score);
+                    coins.erase(coins.begin()+i);
+                }
+            }
+
+            coins_2[i].tick(dt);
+            if(coins_2[i].visible == 1)
+            {
+                if(detect_collision(coins_2[i].bounding_box(),player.bounding_box(),0) == 1)
+                {
+                    //cout << i << '\n';
+                    coins_2[i].visible = 0;
+                    score += 5;
+                    coins_2.erase(coins_2.begin()+i);
+                }
+            }
+        }
+        
         for(i=0;i<total_firelines;i++)
         {
-            if(firelines[i].visible == 1)
-                firelines[i].visible = 0;
-        }
-    }
-
-    if(counter%300 == 0)
-    {
-        if(firebeam2.flag == 0)
-        {
-            firebeam2.flag = 1;
-            //firebeam2.visible = ;
-        }
-        if(firebeams.flag == 0)
-        {
-            firebeams.flag = 1;
-            //firebeams.visible = 0;
-        }
-    }
-
-    if(counter%(480*4) == 0)
-    {
-        if(magnet.visible == 1)
-            magnet.visible = 0;
-        else
-            magnet.visible = 1;
-          
-    }
-
-    if(counter%60 == 0)
-        laser.push_back(Laser(villian.position.x,villian.position.y+0.3,villian.position.z,COLOR_SUPERMAN_CAPE,villian.velocity));
-        
-    player.tick(dt,magnet.visible);
-    villian.tick(dt,magnet.visible);
-    platform.tick(dt);
-    firebeams.tick(dt,range);
-    firebeam2.tick2(dt,range);
-    background.tick();
-    magnet.tick(dt);
-    boomerang.tick(dt);
-
-    //cout << laser.size() << '\n';
-    for(i=0;i<laser.size();i++)
-    {
-        //if(counter%480 == 0)
-        laser[i].tick(dt,villian.position);
-        //cout << laser[i].velocity.y << '\n';
-        if(laser[i].position.x < -7)
-        {
-            laser.erase(laser.begin()+i);
-            continue;
-        }
-        if(laser[i].position.y < -7)
-        {
-            laser.erase(laser.begin()+i);
-            continue;
-        }
-
-    }
-    //cout << bullet.size() << '\n';
-    for(i=0;i<bullet.size();i++)
-    {
-        bullet[i].tick(dt);
-        if(bullet[i].position.x > 7)
-        {
-            bullet.erase(bullet.begin()+i);
-            continue;
-        }
-        if(bullet[i].position.y < -7)
-        {
-            bullet.erase(bullet.begin()+i);
-            continue;
-        }
-    }
-
-    
-
-    //cout << "size =" +coins.size() << '\n';
-    
-    for(i = 0;i<n*m*total;i++)
-    {
-        coins[i].tick(dt);
-        if(coins[i].visible == 1)
-        {
-            if(detect_collision(coins[i].bounding_box(),player.bounding_box(),0) == 1)
+            firelines[i].tick(dt);
+            for(l=0;l<bullet.size();l++)
             {
-                //cout << i << '\n';
-                coins[i].visible = 0;
-                score += 5;
-                //score2.update(score);
-                coins.erase(coins.begin()+i);
+                if(detect_collision(bullet[l].bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+                {
+                    firelines[i].visible = 1;
+                }
             }
+
+            if(firelines[i].visible == 0)
+            {
+
+                if(detect_collision(player.bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+                {
+                    //cout << i << '\n';
+                    score -= 5;
+                    firelines[i].visible = 1;
+                }
+            }
+
+            
+            
         }
 
-        coins_2[i].tick(dt);
-        if(coins_2[i].visible == 1)
+        for(i=0;i<extrapoints_total;i++)
         {
-            if(detect_collision(coins_2[i].bounding_box(),player.bounding_box(),0) == 1)
+            extrapoints[i].tick(dt);
+            if(detect_collision(extrapoints[i].bounding_box(),player.bounding_box(),0)==1)
             {
-                //cout << i << '\n';
-                coins_2[i].visible = 0;
-                score += 5;
-                coins_2.erase(coins_2.begin()+i);
+                score += 10;
+                extrapoints[i].visible = 0;
             }
-        }
-    }
-    
-    for(i=0;i<total_firelines;i++)
-    {
-        firelines[i].tick(dt);
-        for(l=0;l<bullet.size();l++)
-        {
-            if(detect_collision(bullet[l].bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+            speedboost[i].tick(dt);
+            if(detect_collision(speedboost[i].bounding_box(),player.bounding_box(),0) == 1)
             {
-                firelines[i].visible = 1;
+                speedboost[i].visible = 0;
+                boost_indicator = 1;
+                //player.acceleration.x = 10;
+                platform.velocity.x = 10;
+                for(i=0;i<total_firelines;i++)
+                {
+                    firelines[i].velocity.x = -10;
+                }
+                for(i=0;i<n*m*total;i++)
+                {
+                    coins[i].velocity.x = -10;
+                    coins_2[i].velocity.x = -10;
+                }
             }
+
         }
 
-        if(firelines[i].visible == 0)
+        /*for(i=0;i<laser.size();i++)
         {
-
-            if(detect_collision(player.bounding_box(),firelines[i].bounding_box(),firelines[i].rotation)==1)
+            if(laser[i].visible == 0)
             {
-                //cout << i << '\n';
-                score -= 5;
-                firelines[i].visible = 1;
+                if(detect_collision(laser[i].bounding_box(),player.bounding_box(),0) == 1)
+                {
+                    lives -- ;
+                    heart.erase(heart.begin()+lives);
+                    laser[i].visible = 1;
+                }
             }
-        }
+
+        }*/
 
         
-        
-    }
+        //cout << firebeam2.position.y << '\n';
 
-    for(i=0;i<extrapoints_total;i++)
-    {
-        extrapoints[i].tick(dt);
-        if(detect_collision(extrapoints[i].bounding_box(),player.bounding_box(),0)==1)
+        if(firebeam2.visible == 1)
         {
-            score += 10;
-            extrapoints[i].visible = 0;
-        }
-        speedboost[i].tick(dt);
-        if(detect_collision(speedboost[i].bounding_box(),player.bounding_box(),0) == 1)
-        {
-            speedboost[i].visible = 0;
-            boost_indicator = 1;
-            //player.acceleration.x = 10;
-            platform.velocity.x = 10;
-            for(i=0;i<total_firelines;i++)
+
+            if(detect_collision(player.bounding_box(),firebeam2.bounding_box(),0) == 1)
             {
-                firelines[i].velocity.x = -10;
-            }
-            for(i=0;i<n*m*total;i++)
-            {
-                coins[i].velocity.x = -10;
-                coins_2[i].velocity.x = -10;
+                //if(firebeam2.visible == 1)
+                //cout << "touch 2" << '\n';
+                score -= 1;
+                firebeam2.visible == 0;
             }
         }
-
-    }
-
-    for(i=0;i<laser.size();i++)
-    {
-        if(laser[i].visible == 0)
+        if(firebeams.visible == 1)
         {
-            if(detect_collision(laser[i].bounding_box(),player.bounding_box(),0) == 1)
+            if(detect_collision(player.bounding_box(),firebeams.bounding_box(),0) == 1)
             {
-                lives -- ;
-                laser[i].visible = 1;
+                //if(firebeams.visible == 1)
+                //cout << "touch 1" << '\n';
+                score -= 1;
+                firebeams.visible == 0;
             }
+
         }
 
-    }
-
-    
-    //cout << firebeam2.position.y << '\n';
-
-    if(firebeam2.visible == 1)
-    {
-
-        if(detect_collision(player.bounding_box(),firebeam2.bounding_box(),0) == 1)
+        if(detect_collision(player.bounding_box(),boomerang.bounding_box(),0) == 1)
         {
-            //if(firebeam2.visible == 1)
-            //cout << "touch 2" << '\n';
+            //cout << "detected" << '\n';
             score -= 1;
-            firebeam2.visible == 0;
         }
     }
-    if(firebeams.visible == 1)
+    else
     {
-        if(detect_collision(player.bounding_box(),firebeams.bounding_box(),0) == 1)
+        //cout << lives << '\n';
+        if(lives < 0)
         {
-            //if(firebeams.visible == 1)
-            //cout << "touch 1" << '\n';
-            score -= 1;
-            firebeams.visible == 0;
+            cout << "You Lost" << '\n';
+            quit(window);
+        }
+        if(superman_freeze == 1)
+        {
+            for(i=0;i<bullet.size();i++)
+            {
+                if(detect_collision(bullet[i].bounding_box(),villian.bounding_box(),0) == 1)
+                {
+                    //cout << "touch" << '\n';
+                    if(0.2-villian.decrease > -0.7)
+                    villian.decrease += 0.001f;
+                    else
+                    {
+                        cout << "You Won" << '\n';
+                        quit(window);
+                    }
+                    
+
+                } 
+            }
         }
 
-    }
+        if(counter%600 == 1)
+        {
+            if(superman_freeze == 1)
+            {
+                superman_freeze = 0;
+                villian.velocity.y = -2;
+            }
+        }
+        
+        if(counter%60 == 0 && superman_freeze == 0)
+            laser.push_back(Laser(villian.position.x,villian.position.y+0.3,villian.position.z,COLOR_SUPERMAN_CAPE,villian.velocity));
 
-    if(detect_collision(player.bounding_box(),boomerang.bounding_box(),0) == 1)
-    {
-        //cout << "detected" << '\n';
-        score -= 1;
+        player.tick(dt,magnet.visible);
+        villian.tick(dt,magnet.visible);
+        platform.tick(dt);
+
+        for(i=0;i<laser.size();i++)
+        {
+            //if(counter%480 == 0)
+            laser[i].tick(dt,villian.position);
+            //cout << laser[i].velocity.y << '\n';
+            if(laser[i].position.x < -7)
+            {
+                laser.erase(laser.begin()+i);
+                continue;
+            }
+            if(laser[i].position.y < -7)
+            {
+                laser.erase(laser.begin()+i);
+                continue;
+            }
+            if(laser[i].visible == 1)
+            {
+                laser.erase(laser.begin()+i);
+                continue;
+            }
+
+        }
+        //cout << bullet.size() << '\n';
+        for(i=0;i<bullet.size();i++)
+        {
+            bullet[i].tick(dt);
+            if(bullet[i].position.x > 7)
+            {
+                bullet.erase(bullet.begin()+i);
+                continue;
+            }
+            if(bullet[i].position.y < -7)
+            {
+                bullet.erase(bullet.begin()+i);
+                continue;
+            }
+        }
+
+        for(i=0;i<krypton.size();i++)
+        {
+            krypton[i].tick(dt);
+            if(krypton[i].position.x > 7)
+            {
+                krypton.erase(krypton.begin()+i);
+                continue;
+            }
+            if(krypton[i].position.y < -7)
+            {
+                krypton.erase(krypton.begin()+i);
+                continue;
+            }
+            if(krypton[i].visible == 1)
+            {
+                krypton.erase(krypton.begin()+i);
+                continue;
+            }
+        }
+
+        for(i=0;i<laser.size();i++)
+        {
+
+            if(laser[i].visible == 0)
+            {
+                for(l=0;l<bullet.size();l++)
+                {
+                    if(detect_collision(laser[i].bounding_box(),bullet[l].bounding_box(),0) == 1)
+                    {
+                        laser[i].visible = 1;
+                    }
+                }
+                if(detect_collision(laser[i].bounding_box(),player.bounding_box(),0) == 1)
+                {
+                    lives -- ;
+                    laser[i].visible = 1;
+                }
+            }
+
+        }
+
+        for(i=0;i<krypton.size();i++)
+        {
+            if(krypton[i].visible == 0)
+            {
+                if(detect_collision(krypton[i].bounding_box(),villian.bounding_box(),0) == 1)
+                {
+                    superman_freeze = 1;
+                    krypton[i].visible = 1;
+                    villian.velocity.y = 0;
+                }
+            }
+        }
     }
 
     
@@ -616,6 +812,11 @@ void initGL(GLFWwindow *window, int width, int height) {
     n = rand() % 15 + 1;
     m = rand() % 7 + 1;
     range = rand() % 5 + 1;
+
+    for(i=0;i<lives;i++)
+    {
+        heart.push_back(Heart(i-5,6,0,COLOR_BACKGROUND));
+    }
 
     for(l=0;l<total;l++)
     {

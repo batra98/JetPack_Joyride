@@ -1,14 +1,14 @@
-#include "bullet.h"
+#include "krypton.h"
 #include "main.h"
 
-Bullet::Bullet(float x,float y,float z,color_t color)
+Krypton::Krypton(float x,float y,float z,color_t color)
 {
     this->position = glm::vec3(x,y,z);
     this->velocity = glm::vec3(4,4,0);
-    this->acceleration = glm::vec3(0,-3,0);
+    this->acceleration = glm::vec3(0,-4,0);
     this->rotation = 0;
     this->visible = 0;
-    
+
     int n = 100;
 
     GLfloat g_vertex_buffer_data[1005];
@@ -20,8 +20,8 @@ Bullet::Bullet(float x,float y,float z,color_t color)
 		g_vertex_buffer_data[k++] = 0.0f;
 		g_vertex_buffer_data[k++] = 0.0f;
 
-		g_vertex_buffer_data[k++] = 0.0f + 0.25*sin(2*M_PI/n*i);
-		g_vertex_buffer_data[k++] = 0.0f + 0.25*cos(2*M_PI/n*i);
+		g_vertex_buffer_data[k++] = 0.0f + 0.15*sin(2*M_PI/n*i);
+		g_vertex_buffer_data[k++] = 0.0f + 0.15*cos(2*M_PI/n*i);
 		g_vertex_buffer_data[k++] = 0.0f;
 
 		g_vertex_buffer_data[k++] = 0.0f + 0.25*sin(2*M_PI/n*(i+1));
@@ -29,12 +29,9 @@ Bullet::Bullet(float x,float y,float z,color_t color)
 		g_vertex_buffer_data[k++] = 0.0f;
     }
 
-    this->object = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data,COLOR_BATMAN_WATER,GL_FILL);
-
-
+    this->object = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data,COLOR_KRYPTON,GL_FILL);
 }
-
-void Bullet::draw(glm::mat4 VP)
+void Krypton::draw(glm::mat4 VP)
 {
     Matrices.model = glm::mat4(0.5f);
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
@@ -51,12 +48,12 @@ void Bullet::draw(glm::mat4 VP)
     draw3DObject(this->object4);*/
 }
 
-void Bullet::setposition(float x,float y,float z)
+void Krypton::setposition(float x,float y,float z)
 {
     this->position = glm::vec3(x,y,z);
 }
 
-void Bullet::tick(double dt)
+void Krypton::tick(double dt)
 {
     //this->rotation += 1;
     this->velocity += this->acceleration*(glm::vec3(dt,dt,dt));
@@ -64,7 +61,7 @@ void Bullet::tick(double dt)
     
 }
 
-bounding_box_t Bullet::bounding_box()
+bounding_box_t Krypton::bounding_box()
 {
     float x = this->position.x, y = this->position.y;
     float w = 0.25, h = 0.25;

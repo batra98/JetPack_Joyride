@@ -11,10 +11,13 @@ public:
     glm::vec3 acceleration;
     glm::vec3 velocity;
     void draw(glm::mat4 VP);
+    void draw2(glm::mat4 VP);
     void setposition(float x,float y,float z);
+    void decrease_life();
     void tick(double dt,int visible);
     bounding_box_t bounding_box();
     double size;
+    double decrease;
     float rotation;
     int up;
 
@@ -33,6 +36,21 @@ private:
     VAO *object11;
     VAO *object12;
     VAO *object13;
+
+    VAO *object14;
+    VAO *object15;
+    VAO *object16;
+    VAO *object17;
+    VAO *object18;
+    VAO *object19;
+    VAO *object20;
+    VAO *object21;
+    VAO *object22;
+    VAO *object23;
+    VAO *object24;
+    VAO *object25;
+    VAO *object26;
+    VAO *object27;
 
 };
 

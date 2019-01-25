@@ -7,6 +7,7 @@ Villian::Villian(float x,float y,float z,color_t color)
     this->velocity = glm::vec3(0,-2,0);
 
     this->rotation = 0;
+    this->decrease = 0.0;
 
     GLfloat vertex_buffer_data[] = {
         0.0f, 0.0f, 0.0f,
@@ -82,10 +83,10 @@ Villian::Villian(float x,float y,float z,color_t color)
 
         -0.7f,1.2f,0.0f,
         -0.7f,1.3f,0.0f,
-        0.2f,1.2f,0.0f,//health
-        0.2f,1.3f,0.0f,
+        0.2f-this->decrease,1.2f,0.0f,//health
+        0.2f-this->decrease,1.3f,0.0f,
         -0.7f,1.3f,0.0f,
-        0.2f,1.2f,0.0f,
+        0.2f-this->decrease,1.2f,0.0f,
 
 
 
@@ -105,6 +106,20 @@ Villian::Villian(float x,float y,float z,color_t color)
     this->object9 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*7+9,COLOR_SUPERMAN_CAPE,GL_FILL);
     this->object10 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*8,COLOR_SUPERMAN_CAPE,GL_FILL);
     this->object11 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*8 + 9,COLOR_SUPERMAN_CAPE,GL_FILL);
+
+
+    this->object14 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data,COLOR_BATMAN_SKIN,GL_FILL);
+    this->object15 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18,COLOR_SUPERMAN_HAIR,GL_FILL);
+    this->object16 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*2,COLOR_SUPERMAN_HAIR,GL_FILL);
+    this->object17 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*2+9,COLOR_SUPERMAN_HAIR,GL_FILL);
+    this->object18 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*3+9,COLOR_SUPERMAN_BODY,GL_FILL);
+    this->object19 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*4+9,COLOR_FREEZE_BODY,GL_FILL);
+    this->object20= create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*5+9,COLOR_FREEZE_BODY,GL_FILL);
+    this->object21 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*6,COLOR_FREEZE_BODY,GL_FILL);
+    this->object22 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*6+9,COLOR_FREEZE_BODY,GL_FILL);
+    this->object23 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*7+9,COLOR_FREEZE_BODY,GL_FILL);
+    this->object24 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*8,COLOR_FREEZE_BODY,GL_FILL);
+    this->object25 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*8 + 9,COLOR_SUPERMAN_CAPE,GL_FILL);
 }
 
 void Villian::draw(glm::mat4 VP)
@@ -117,6 +132,21 @@ void Villian::draw(glm::mat4 VP)
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
+    GLfloat vertex_buffer_data[] = {
+        -0.7f,1.2f,0.0f,
+        -0.7f,1.3f,0.0f,
+        0.2f-this->decrease,1.2f,0.0f,//health
+        0.2f-this->decrease,1.3f,0.0f,
+        -0.7f,1.3f,0.0f,
+        0.2f-this->decrease,1.2f,0.0f,
+
+
+
+
+
+    };
+
+    this->object11 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data,COLOR_SUPERMAN_CAPE,GL_FILL);
     draw3DObject(this->object);
     draw3DObject(this->object1);
     draw3DObject(this->object2);
@@ -129,6 +159,45 @@ void Villian::draw(glm::mat4 VP)
     draw3DObject(this->object9);
     draw3DObject(this->object10);
     draw3DObject(this->object11);
+}
+
+void Villian::draw2(glm::mat4 VP)
+{
+    Matrices.model = glm::mat4(0.5f);
+    glm::mat4 translate = glm::translate (this->position);    // glTranslatef
+    glm::mat4 rotate    = glm::rotate((float) (this->rotation * M_PI / 180.0f), glm::vec3(0, 0, 1));
+    // No need as coords centered at 0, 0, 0 of cube arouund which we waant to rotate
+    rotate          = rotate * glm::translate(glm::vec3(0, 0, 0));
+    Matrices.model *= (translate * rotate);
+    glm::mat4 MVP = VP * Matrices.model;
+    glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
+    GLfloat vertex_buffer_data[] = {
+        -0.7f,1.2f,0.0f,
+        -0.7f,1.3f,0.0f,
+        0.2f-this->decrease,1.2f,0.0f,//health
+        0.2f-this->decrease,1.3f,0.0f,
+        -0.7f,1.3f,0.0f,
+        0.2f-this->decrease,1.2f,0.0f,
+
+
+
+
+
+    };
+
+    this->object25 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data,COLOR_SUPERMAN_CAPE,GL_FILL);
+    draw3DObject(this->object14);
+    draw3DObject(this->object15);
+    draw3DObject(this->object16);
+    draw3DObject(this->object17);
+    draw3DObject(this->object18);
+    draw3DObject(this->object19);
+    draw3DObject(this->object20);
+    draw3DObject(this->object21);
+    draw3DObject(this->object22);
+    draw3DObject(this->object23);
+    draw3DObject(this->object24);
+    draw3DObject(this->object25);
 }
 
 void Villian::setposition(float x,float y,float z)
@@ -183,3 +252,4 @@ bounding_box_t Villian::bounding_box() {
     bounding_box_t bbox = { x,y,2*w,2*h };
     return bbox;
 }
+

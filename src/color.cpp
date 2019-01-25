@@ -26,3 +26,6 @@ const color_t COLOR_SUPERMAN_HAIR = {144,84,36};
 const color_t COLOR_SUPERMAN_BODY = {40,131,186};
 const color_t COLOR_SUPERMAN_CAPE = {200,0,0};
 const color_t COLOR_SUPERMAN_BULLET = {255,235,0};
+const color_t COLOR_KRYPTON = {50,205,50};
+const color_t COLOR_FREEZE_CAPE = {26, 5, 84};
+const color_t COLOR_FREEZE_BODY = {12, 11, 19};
