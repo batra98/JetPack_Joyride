@@ -16,6 +16,7 @@ Player::Player(float x,float y, float z, color_t color)
     this->flag = 0;
 
     this->size = 0.20f;
+    this->shield = 0;
 
     GLfloat vertex_buffer_data[] = {
         0.0f, 0.0f, 0.0f,
@@ -92,6 +93,42 @@ Player::Player(float x,float y, float z, color_t color)
         -0.35f,-0.55f,0.0f,
         -0.35f,0.0f,0.0f,
 
+        0.65f,0.8f,0.0f,
+        0.65f,0.75f,0.0f,
+        -0.4f,0.8f,0.0f,
+
+        -0.4f,0.75f,0.0f,//shield
+        0.65f,0.75f,0.0f,
+        -0.4f,0.8f,0.0f,
+
+
+
+        0.65f,0.8f,0.0f,
+        0.6f,0.8f,0.0f,
+        0.65f,-0.9f,0.0f,
+
+        0.6f,-0.9f,0.0f,
+        0.6f,0.8f,0.0f,
+        0.65f,-0.9f,0.0f,
+
+
+
+        0.65f,-0.9f,0.0f,
+        0.65f,-0.85f,0.0f,
+        -0.35f,-0.9f,0.0f,
+
+        -0.4f,-0.85f,0.0f,//shield
+        0.65f,-0.85f,0.0f,
+        -0.4f,-0.9f,0.0f,
+
+        -0.45f,0.8f,0.0f,
+        -0.4f,0.8f,0.0f,
+        -0.45f,-0.9f,0.0f,
+
+        -0.4f,-0.9f,0.0f,
+        -0.4f,0.8f,0.0f,
+        -0.45f,-0.9f,0.0f,
+
     };
 
     this->object = create3DObject(GL_TRIANGLES,6,vertex_buffer_data,COLOR_BATMAN_SKIN,GL_FILL);
@@ -107,6 +144,10 @@ Player::Player(float x,float y, float z, color_t color)
     this->object10 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*8,COLOR_FLAME_OUTER,GL_FILL);
     this->object11 = create3DObject(GL_TRIANGLES,3,vertex_buffer_data+18*8 + 9,COLOR_BATMAN_BELT,GL_FILL);
     this->object12 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*9,COLOR_BATMAN_JETPACK,GL_FILL);
+    this->object13 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*10,COLOR_BATMAN_JETPACK,GL_FILL);
+    this->object14 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*11,COLOR_BATMAN_JETPACK,GL_FILL);
+    this->object15 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*12,COLOR_BATMAN_JETPACK,GL_FILL);
+    this->object16 = create3DObject(GL_TRIANGLES,6,vertex_buffer_data+18*13,COLOR_BATMAN_JETPACK,GL_FILL);
 
 
 }
@@ -134,7 +175,19 @@ void Player::draw(glm::mat4 VP)
     draw3DObject(this->object10);
     draw3DObject(this->object11);
     draw3DObject(this->object12);
+
+    if(this->shield == 1)
+    {
+        draw3DObject(this->object13);
+        draw3DObject(this->object14);
+        draw3DObject(this->object15);
+        draw3DObject(this->object16);
+    }
+    
 }
+
+
+
 
 void Player::draw2(glm::mat4 VP)
 {
@@ -156,6 +209,13 @@ void Player::draw2(glm::mat4 VP)
     draw3DObject(this->object7);
     draw3DObject(this->object8);
     draw3DObject(this->object9);
+    if(this->shield == 1)
+    {
+        draw3DObject(this->object13);
+        draw3DObject(this->object14);
+        draw3DObject(this->object15);
+        draw3DObject(this->object16);
+    }
 }
 
 void Player::setposition(float x,float y,float z)

@@ -1,19 +1,6 @@
 #include "line.h"
 #include "main.h"
 
-Line::Line(float fx, float fy, float tx, float ty)
-{
-    if (tx == fx) this->rotation = ty > fy ? M_PI/2 : -M_PI/2;
-    else if (ty == fy) this->rotation = tx > fx ? 0 : M_PI;
-    else this->rotation = atan((ty-fy)/(tx-fx));
-    this->position = glm::vec3(fx, fy, 0);
-    static const GLfloat vertex_buffer_data [] = {
-        0, 0, 0,
-        0.2, 0, 0
-    };
-    this->object = create3DObject(GL_LINES, 2, vertex_buffer_data, COLOR_BATMAN_EYE, GL_FILL);
-}
-
 
 void Line::draw(glm::mat4 VP) {
     if (!this->object) return;
@@ -25,3 +12,49 @@ void Line::draw(glm::mat4 VP) {
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
 }
+
+Line::Line(float fx, float fy, float tx, float ty)
+{
+
+    if(tx == fx)
+    {
+        if(ty > fy )
+        this->rotation = M_PI/2;
+        else
+        {
+            this->rotation = -M_PI/2;
+        }
+        
+    }
+    else if(ty == fy)
+    {
+         if(tx > fx)
+         {
+             this->rotation = 0;
+         }
+         else
+         {
+             this->rotation = M_PI;
+         }
+         
+    }
+    else
+    {
+        this->rotation = atan((ty-fy)/(tx-fx));
+    }
+    
+    
+    
+    static const GLfloat vertex_buffer_data [] = 
+    {
+        0, 0, 0,
+        0.2, 0, 0
+    };
+
+    this->position = glm::vec3(fx, fy, 0);
+    
+    this->object = create3DObject(GL_LINES, 2, vertex_buffer_data, COLOR_BATMAN_EYE, GL_FILL);
+}
+
+
+

@@ -10,6 +10,7 @@ public:
     glm::vec3 position;
     glm::vec3 acceleration;
     glm::vec3 velocity;
+    int shield;
     void draw2(glm::mat4 VP);
     void draw(glm::mat4 VP);
     void setposition(float x,float y,float z);
@@ -35,6 +36,10 @@ private:
     VAO *object11;
     VAO *object12;
     VAO *object13;
+    VAO *object14;
+    VAO *object15;
+    VAO *object16;
+    VAO *object17;
 
 };
 

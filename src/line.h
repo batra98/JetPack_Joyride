@@ -8,9 +8,10 @@ class Line
 public:
     Line() {}
     Line(float fx, float fy, float tx, float ty);
+    void draw(glm::mat4 VP);
     float rotation;
     glm::vec3 position;
-    void draw(glm::mat4 VP);
+    
 private:
     VAO* object = NULL;
 };
