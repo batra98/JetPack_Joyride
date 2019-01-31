@@ -55,7 +55,7 @@ Firelines::Firelines(float x,float y,float z,color_t color)
     };
     this->object = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data,COLOR_RED,GL_FILL);
     this->object1 = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data1,COLOR_DARK_RED,GL_FILL);
-    this->object2 = create3DObject(GL_TRIANGLES,6,g_vertex_buffer_data2,COLOR_YELLOW,GL_FILL);
+    this->object2 = create3DObject(GL_TRIANGLES,6,g_vertex_buffer_data2,COLOR_FIRELINES,GL_FILL);
 
 }
 

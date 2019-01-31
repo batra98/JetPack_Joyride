@@ -9,22 +9,7 @@ Coin::Coin(float x,float y,float z,color_t color)
     this->visible = 1;
     this->velocity = glm::vec3(-1.0,0.0,0.0);
 
-    /*GLfloat g_vertex_buffer_data[1005];
-	int k = 0;
-	for(int i = 0;i<n;i++)
-	{
-		g_vertex_buffer_data[k++] = 0.0f;
-		g_vertex_buffer_data[k++] = 0.0f;
-		g_vertex_buffer_data[k++] = 0.0f;
-
-		g_vertex_buffer_data[k++] = 0.0f + 0.2*sin(2*M_PI/n*i);
-		g_vertex_buffer_data[k++] = 0.0f + 0.2*cos(2*M_PI/n*i);
-		g_vertex_buffer_data[k++] = 0.0f;
-
-		g_vertex_buffer_data[k++] = 0.0f + 0.2*sin(2*M_PI/n*(i+1));
-		g_vertex_buffer_data[k++] = 0.0f + 0.2*cos(2*M_PI/n*(i+1));
-		g_vertex_buffer_data[k++] = 0.0f;
-	}*/
+    
     GLfloat g_vertex_buffer_data[] = {
         0.0f,0.4f,0.0f,
         0.0f,0.0f,0.0f,
@@ -39,7 +24,7 @@ Coin::Coin(float x,float y,float z,color_t color)
         0.2f,-0.1f,0.0f,
     };
 
-    this->object = create3DObject(GL_TRIANGLES,9,g_vertex_buffer_data,COLOR_BATMAN_SUIT,GL_FILL);
+    this->object = create3DObject(GL_TRIANGLES,9,g_vertex_buffer_data,COLOR_BATMAN_COIN,GL_FILL);
 
 
 

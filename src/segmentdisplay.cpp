@@ -2,21 +2,18 @@
 #include "main.h"
 #include <cstring>
 
-Segmentdisplay::Segmentdisplay()
-{
-    this->score = 0;
-    this->digslen = 0;
-    this->position.x = 0;
-    this->position.y = 3.5;
-}
-
-
 void Segmentdisplay::set_position(float x, float y){
     this->position = glm::vec3(x, y, 0);
 }
-void Segmentdisplay::draw(glm::mat4 VP) {
-    for (int i = 0; i < digslen; i++)
+void Segmentdisplay::draw(glm::mat4 VP) 
+{
+    int i = 0;
+    
+    while(i<digslen)
+    {
         digs[i].draw(VP);
+        i++;
+    }
 }
 
 

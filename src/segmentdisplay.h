@@ -8,7 +8,6 @@
 class Segmentdisplay
 {
 public:
-    Segmentdisplay();
     void update(int score);
     glm::vec3 position;
     void draw(glm::mat4 VP);

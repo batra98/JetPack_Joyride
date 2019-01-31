@@ -11,7 +11,7 @@ class Digit
 {
 public:
     Digit() {}
-    void set_position(float x, float y);
+    
     void draw(glm::mat4 VP);
     Digit(char c, float x, float y);   
     glm::vec3 position;

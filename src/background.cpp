@@ -16,7 +16,7 @@ Background::Background(float x,float y,float z,color_t color)
 	};*/
     this->rotation = 108;
     //this->rotation = 0;
-	GLfloat g_vertex_buffer_data[105];
+	GLfloat g_vertex_buffer_data[1005];
     GLfloat g_vertex_buffer_data1[]={
         0.0f,2.427f,-1.0f,
         0.0f,0.0f,-1.0f,
@@ -68,6 +68,7 @@ Background::Background(float x,float y,float z,color_t color)
 		g_vertex_buffer_data[k++] = -1.0f;
 	}
 
+    
 
     
 
@@ -77,6 +78,7 @@ Background::Background(float x,float y,float z,color_t color)
     this->object = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data,COLOR_BATMAN_SUIT,GL_FILL);
     this->object1 = create3DObject(GL_TRIANGLES,3*n,g_vertex_buffer_data+9*n,COLOR_BACKGROUND_OUTER,GL_FILL);
     this->object2 = create3DObject(GL_TRIANGLES,12,g_vertex_buffer_data1,COLOR_BATMAN_BODY,GL_FILL);
+    
 }
 
 void Background::draw(glm::mat4 VP)
@@ -91,7 +93,7 @@ void Background::draw(glm::mat4 VP)
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
     draw3DObject(this->object1);
-    //draw3DObject(this->object2);
+    
 }
 
 void Background::draw2(glm::mat4 VP)

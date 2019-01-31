@@ -1,10 +1,10 @@
 #include "main.h"
 
 const color_t COLOR_RED = { 236, 100, 75 };
-const color_t COLOR_GREEN = { 135, 211, 124 };
-const color_t COLOR_BLACK = { 52, 73, 94 };
+const color_t COLOR_GREEN = { 242, 210, 89 };
+const color_t COLOR_BLACK = { 144, 91, 39 };
 const color_t COLOR_BACKGROUND = {102, 78, 174 };
-const color_t COLOR_YELLOW = {255,255,153};
+const color_t COLOR_YELLOW = {242, 210, 89};
 const color_t COLOR_DARK_RED = {178,34,34};
 const color_t COLOR_BATMAN_SUIT = {0,0,0};
 const color_t COLOR_BATMAN_SKIN = {255,173,96};
@@ -29,3 +29,5 @@ const color_t COLOR_SUPERMAN_BULLET = {255,235,0};
 const color_t COLOR_KRYPTON = {50,205,50};
 const color_t COLOR_FREEZE_CAPE = {26, 5, 84};
 const color_t COLOR_FREEZE_BODY = {12, 11, 19};
+const color_t COLOR_BATMAN_COIN = {26, 5, 84};
+const color_t COLOR_FIRELINES = {248, 232, 145};

@@ -35,8 +35,9 @@ Platform::Platform(float x,float y,float z,color_t color)
 */
     GLfloat vertex_buffer_data[1805];
     GLfloat vertex_buffer_data1[1805];
+    
 
-    int k = 0,l = 0,i,j;
+    int k = 0,l = 0,i,j,h=0;
     float size = 0.0f;
 
     for(i=0;i<100;i++)
@@ -66,6 +67,8 @@ Platform::Platform(float x,float y,float z,color_t color)
         vertex_buffer_data[k++] = 0.0f;
 
 
+
+
         vertex_buffer_data1[l++] = -0.5f + size;
         vertex_buffer_data1[l++] = -7.2f;
         vertex_buffer_data1[l++] = 0.0f;
@@ -89,6 +92,11 @@ Platform::Platform(float x,float y,float z,color_t color)
         vertex_buffer_data1[l++] = 0.5f + size;
         vertex_buffer_data1[l++] = -7.2f;
         vertex_buffer_data1[l++] = 0.0f;
+
+
+
+
+
 
         size += 2.0f;
         
@@ -98,6 +106,7 @@ Platform::Platform(float x,float y,float z,color_t color)
 
     this->object = create3DObject(GL_TRIANGLES,600,vertex_buffer_data,color,GL_FILL);
     this->object2 = create3DObject(GL_TRIANGLES,600,vertex_buffer_data1,COLOR_GREEN,GL_FILL);
+   
 }
 
 void Platform::draw(glm::mat4 VP) {
@@ -111,6 +120,7 @@ void Platform::draw(glm::mat4 VP) {
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
     draw3DObject(this->object2);
+    
 }
 
 void Platform::set_position(float x, float y) {

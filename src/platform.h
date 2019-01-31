@@ -16,7 +16,8 @@ public:
 
 private:
     VAO *object;
-    VAO *object2;   
+    VAO *object2;
+    VAO *object3;   
 };
 
 #endif
