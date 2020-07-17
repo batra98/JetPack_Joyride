@@ -57,9 +57,57 @@ include CMakeFiles/graphics_asgn1.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/graphics_asgn1.dir/flags.make
 
+CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o: ../src/speedboost.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/speedboost.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/speedboost.cpp > CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/speedboost.cpp -o CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o: ../src/firelines.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/firelines.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/firelines.cpp > CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/firelines.cpp -o CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o
+
+
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/other_handlers.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.i: cmake_force
@@ -83,7 +131,7 @@ CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/timer.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.i: cmake_force
@@ -107,7 +155,7 @@ CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o.provides.build: CMakeFiles/graphic
 
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/input.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/input.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/input.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.i: cmake_force
@@ -129,9 +177,129 @@ CMakeFiles/graphics_asgn1.dir/src/input.cpp.o.provides: CMakeFiles/graphics_asgn
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/input.cpp.o
 
 
+CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o: ../src/segmentdisplay.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/segmentdisplay.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/segmentdisplay.cpp > CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/segmentdisplay.cpp -o CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o: ../src/coin2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/coin2.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/coin2.cpp > CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/coin2.cpp -o CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o: ../src/coin.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/coin.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/coin.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/coin.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/coin.cpp > CMakeFiles/graphics_asgn1.dir/src/coin.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/coin.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/coin.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/coin.cpp -o CMakeFiles/graphics_asgn1.dir/src/coin.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o: ../src/heart.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/heart.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/heart.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/heart.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/heart.cpp > CMakeFiles/graphics_asgn1.dir/src/heart.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/heart.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/heart.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/heart.cpp -o CMakeFiles/graphics_asgn1.dir/src/heart.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o: ../src/bullet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/bullet.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/bullet.cpp > CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/bullet.cpp -o CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o
+
+
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/color.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/color.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/color.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/color.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.i: cmake_force
@@ -153,9 +321,57 @@ CMakeFiles/graphics_asgn1.dir/src/color.cpp.o.provides: CMakeFiles/graphics_asgn
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/color.cpp.o
 
 
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o: ../src/ring.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/ring.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/ring.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/ring.cpp > CMakeFiles/graphics_asgn1.dir/src/ring.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/ring.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/ring.cpp -o CMakeFiles/graphics_asgn1.dir/src/ring.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/line.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/line.cpp.o: ../src/line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/line.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/line.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/line.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/line.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/line.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/line.cpp > CMakeFiles/graphics_asgn1.dir/src/line.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/line.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/line.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/line.cpp -o CMakeFiles/graphics_asgn1.dir/src/line.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/line.cpp.o
+
+
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/main.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/main.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/main.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.i: cmake_force
@@ -177,9 +393,105 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o.provides: CMakeFiles/graphics_asgn1
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
 
 
+CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o: ../src/platform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/platform.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/platform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/platform.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/platform.cpp > CMakeFiles/graphics_asgn1.dir/src/platform.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/platform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/platform.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/platform.cpp -o CMakeFiles/graphics_asgn1.dir/src/platform.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/player.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/player.cpp.o: ../src/player.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/player.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/player.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/player.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/player.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/player.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/player.cpp > CMakeFiles/graphics_asgn1.dir/src/player.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/player.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/player.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/player.cpp -o CMakeFiles/graphics_asgn1.dir/src/player.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/player.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o: ../src/extrapoints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/extrapoints.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/extrapoints.cpp > CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/extrapoints.cpp -o CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o: ../src/laser.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/laser.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/laser.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/laser.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/laser.cpp > CMakeFiles/graphics_asgn1.dir/src/laser.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/laser.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/laser.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/laser.cpp -o CMakeFiles/graphics_asgn1.dir/src/laser.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o
+
+
 CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/nonedit.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.i: cmake_force
@@ -201,9 +513,177 @@ CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o.provides: CMakeFiles/graphics_as
 CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o
 
 
+CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o: ../src/magnet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/magnet.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/magnet.cpp > CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/magnet.cpp -o CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o: ../src/firebeams.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/firebeams.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/firebeams.cpp > CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/firebeams.cpp -o CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o: ../src/digit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/digit.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/digit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/digit.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/digit.cpp > CMakeFiles/graphics_asgn1.dir/src/digit.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/digit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/digit.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/digit.cpp -o CMakeFiles/graphics_asgn1.dir/src/digit.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o: ../src/villian.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/villian.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/villian.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/villian.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/villian.cpp > CMakeFiles/graphics_asgn1.dir/src/villian.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/villian.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/villian.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/villian.cpp -o CMakeFiles/graphics_asgn1.dir/src/villian.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o: ../src/boomerang.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/boomerang.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/boomerang.cpp > CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/boomerang.cpp -o CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/background.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/background.cpp.o: ../src/background.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/background.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/background.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/background.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/background.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/background.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/background.cpp > CMakeFiles/graphics_asgn1.dir/src/background.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/background.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/background.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/background.cpp -o CMakeFiles/graphics_asgn1.dir/src/background.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/background.cpp.o
+
+
+CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
+CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o: ../src/krypton.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/krypton.cpp
+
+CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/gaurav/Graphics/jet_joyride/src/krypton.cpp > CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.i
+
+CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/gaurav/Graphics/jet_joyride/src/krypton.cpp -o CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.s
+
+CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.requires:
+
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.requires
+
+CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.provides: CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.requires
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.provides.build
+.PHONY : CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.provides
+
+CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.provides.build: CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o
+
+
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: CMakeFiles/graphics_asgn1.dir/flags.make
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o -c /home/gaurav/Graphics/jet_joyride/src/ball.cpp
 
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.i: cmake_force
@@ -227,27 +707,67 @@ CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o.provides.build: CMakeFiles/graphics
 
 # Object files for target graphics_asgn1
 graphics_asgn1_OBJECTS = \
+"CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/input.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/color.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/line.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/main.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/player.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/background.cpp.o" \
+"CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o" \
 "CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o"
 
 # External object files for target graphics_asgn1
 graphics_asgn1_EXTERNAL_OBJECTS =
 
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/input.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/color.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/line.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/main.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/player.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/background.cpp.o
+graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/build.make
 graphics_asgn1: CMakeFiles/graphics_asgn1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable graphics_asgn1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/gaurav/Graphics/jet_joyride/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Linking CXX executable graphics_asgn1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graphics_asgn1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -255,12 +775,32 @@ CMakeFiles/graphics_asgn1.dir/build: graphics_asgn1
 
 .PHONY : CMakeFiles/graphics_asgn1.dir/build
 
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/input.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/color.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/line.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/main.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/player.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/background.cpp.o.requires
+CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o.requires
 CMakeFiles/graphics_asgn1.dir/requires: CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o.requires
 
 .PHONY : CMakeFiles/graphics_asgn1.dir/requires

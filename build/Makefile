@@ -123,6 +123,33 @@ graphics_asgn1/fast:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/build
 .PHONY : graphics_asgn1/fast
 
+src/background.o: src/background.cpp.o
+
+.PHONY : src/background.o
+
+# target to build an object file
+src/background.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/background.cpp.o
+.PHONY : src/background.cpp.o
+
+src/background.i: src/background.cpp.i
+
+.PHONY : src/background.i
+
+# target to preprocess a source file
+src/background.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/background.cpp.i
+.PHONY : src/background.cpp.i
+
+src/background.s: src/background.cpp.s
+
+.PHONY : src/background.s
+
+# target to generate assembly for a file
+src/background.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/background.cpp.s
+.PHONY : src/background.cpp.s
+
 src/ball.o: src/ball.cpp.o
 
 .PHONY : src/ball.o
@@ -149,6 +176,114 @@ src/ball.s: src/ball.cpp.s
 src/ball.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ball.cpp.s
 .PHONY : src/ball.cpp.s
+
+src/boomerang.o: src/boomerang.cpp.o
+
+.PHONY : src/boomerang.o
+
+# target to build an object file
+src/boomerang.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.o
+.PHONY : src/boomerang.cpp.o
+
+src/boomerang.i: src/boomerang.cpp.i
+
+.PHONY : src/boomerang.i
+
+# target to preprocess a source file
+src/boomerang.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.i
+.PHONY : src/boomerang.cpp.i
+
+src/boomerang.s: src/boomerang.cpp.s
+
+.PHONY : src/boomerang.s
+
+# target to generate assembly for a file
+src/boomerang.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/boomerang.cpp.s
+.PHONY : src/boomerang.cpp.s
+
+src/bullet.o: src/bullet.cpp.o
+
+.PHONY : src/bullet.o
+
+# target to build an object file
+src/bullet.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.o
+.PHONY : src/bullet.cpp.o
+
+src/bullet.i: src/bullet.cpp.i
+
+.PHONY : src/bullet.i
+
+# target to preprocess a source file
+src/bullet.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.i
+.PHONY : src/bullet.cpp.i
+
+src/bullet.s: src/bullet.cpp.s
+
+.PHONY : src/bullet.s
+
+# target to generate assembly for a file
+src/bullet.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/bullet.cpp.s
+.PHONY : src/bullet.cpp.s
+
+src/coin.o: src/coin.cpp.o
+
+.PHONY : src/coin.o
+
+# target to build an object file
+src/coin.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin.cpp.o
+.PHONY : src/coin.cpp.o
+
+src/coin.i: src/coin.cpp.i
+
+.PHONY : src/coin.i
+
+# target to preprocess a source file
+src/coin.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin.cpp.i
+.PHONY : src/coin.cpp.i
+
+src/coin.s: src/coin.cpp.s
+
+.PHONY : src/coin.s
+
+# target to generate assembly for a file
+src/coin.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin.cpp.s
+.PHONY : src/coin.cpp.s
+
+src/coin2.o: src/coin2.cpp.o
+
+.PHONY : src/coin2.o
+
+# target to build an object file
+src/coin2.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.o
+.PHONY : src/coin2.cpp.o
+
+src/coin2.i: src/coin2.cpp.i
+
+.PHONY : src/coin2.i
+
+# target to preprocess a source file
+src/coin2.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.i
+.PHONY : src/coin2.cpp.i
+
+src/coin2.s: src/coin2.cpp.s
+
+.PHONY : src/coin2.s
+
+# target to generate assembly for a file
+src/coin2.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/coin2.cpp.s
+.PHONY : src/coin2.cpp.s
 
 src/color.o: src/color.cpp.o
 
@@ -177,6 +312,141 @@ src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
 
+src/digit.o: src/digit.cpp.o
+
+.PHONY : src/digit.o
+
+# target to build an object file
+src/digit.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/digit.cpp.o
+.PHONY : src/digit.cpp.o
+
+src/digit.i: src/digit.cpp.i
+
+.PHONY : src/digit.i
+
+# target to preprocess a source file
+src/digit.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/digit.cpp.i
+.PHONY : src/digit.cpp.i
+
+src/digit.s: src/digit.cpp.s
+
+.PHONY : src/digit.s
+
+# target to generate assembly for a file
+src/digit.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/digit.cpp.s
+.PHONY : src/digit.cpp.s
+
+src/extrapoints.o: src/extrapoints.cpp.o
+
+.PHONY : src/extrapoints.o
+
+# target to build an object file
+src/extrapoints.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.o
+.PHONY : src/extrapoints.cpp.o
+
+src/extrapoints.i: src/extrapoints.cpp.i
+
+.PHONY : src/extrapoints.i
+
+# target to preprocess a source file
+src/extrapoints.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.i
+.PHONY : src/extrapoints.cpp.i
+
+src/extrapoints.s: src/extrapoints.cpp.s
+
+.PHONY : src/extrapoints.s
+
+# target to generate assembly for a file
+src/extrapoints.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/extrapoints.cpp.s
+.PHONY : src/extrapoints.cpp.s
+
+src/firebeams.o: src/firebeams.cpp.o
+
+.PHONY : src/firebeams.o
+
+# target to build an object file
+src/firebeams.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.o
+.PHONY : src/firebeams.cpp.o
+
+src/firebeams.i: src/firebeams.cpp.i
+
+.PHONY : src/firebeams.i
+
+# target to preprocess a source file
+src/firebeams.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.i
+.PHONY : src/firebeams.cpp.i
+
+src/firebeams.s: src/firebeams.cpp.s
+
+.PHONY : src/firebeams.s
+
+# target to generate assembly for a file
+src/firebeams.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firebeams.cpp.s
+.PHONY : src/firebeams.cpp.s
+
+src/firelines.o: src/firelines.cpp.o
+
+.PHONY : src/firelines.o
+
+# target to build an object file
+src/firelines.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.o
+.PHONY : src/firelines.cpp.o
+
+src/firelines.i: src/firelines.cpp.i
+
+.PHONY : src/firelines.i
+
+# target to preprocess a source file
+src/firelines.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.i
+.PHONY : src/firelines.cpp.i
+
+src/firelines.s: src/firelines.cpp.s
+
+.PHONY : src/firelines.s
+
+# target to generate assembly for a file
+src/firelines.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/firelines.cpp.s
+.PHONY : src/firelines.cpp.s
+
+src/heart.o: src/heart.cpp.o
+
+.PHONY : src/heart.o
+
+# target to build an object file
+src/heart.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/heart.cpp.o
+.PHONY : src/heart.cpp.o
+
+src/heart.i: src/heart.cpp.i
+
+.PHONY : src/heart.i
+
+# target to preprocess a source file
+src/heart.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/heart.cpp.i
+.PHONY : src/heart.cpp.i
+
+src/heart.s: src/heart.cpp.s
+
+.PHONY : src/heart.s
+
+# target to generate assembly for a file
+src/heart.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/heart.cpp.s
+.PHONY : src/heart.cpp.s
+
 src/input.o: src/input.cpp.o
 
 .PHONY : src/input.o
@@ -203,6 +473,114 @@ src/input.s: src/input.cpp.s
 src/input.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/input.cpp.s
 .PHONY : src/input.cpp.s
+
+src/krypton.o: src/krypton.cpp.o
+
+.PHONY : src/krypton.o
+
+# target to build an object file
+src/krypton.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.o
+.PHONY : src/krypton.cpp.o
+
+src/krypton.i: src/krypton.cpp.i
+
+.PHONY : src/krypton.i
+
+# target to preprocess a source file
+src/krypton.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.i
+.PHONY : src/krypton.cpp.i
+
+src/krypton.s: src/krypton.cpp.s
+
+.PHONY : src/krypton.s
+
+# target to generate assembly for a file
+src/krypton.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/krypton.cpp.s
+.PHONY : src/krypton.cpp.s
+
+src/laser.o: src/laser.cpp.o
+
+.PHONY : src/laser.o
+
+# target to build an object file
+src/laser.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/laser.cpp.o
+.PHONY : src/laser.cpp.o
+
+src/laser.i: src/laser.cpp.i
+
+.PHONY : src/laser.i
+
+# target to preprocess a source file
+src/laser.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/laser.cpp.i
+.PHONY : src/laser.cpp.i
+
+src/laser.s: src/laser.cpp.s
+
+.PHONY : src/laser.s
+
+# target to generate assembly for a file
+src/laser.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/laser.cpp.s
+.PHONY : src/laser.cpp.s
+
+src/line.o: src/line.cpp.o
+
+.PHONY : src/line.o
+
+# target to build an object file
+src/line.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/line.cpp.o
+.PHONY : src/line.cpp.o
+
+src/line.i: src/line.cpp.i
+
+.PHONY : src/line.i
+
+# target to preprocess a source file
+src/line.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/line.cpp.i
+.PHONY : src/line.cpp.i
+
+src/line.s: src/line.cpp.s
+
+.PHONY : src/line.s
+
+# target to generate assembly for a file
+src/line.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/line.cpp.s
+.PHONY : src/line.cpp.s
+
+src/magnet.o: src/magnet.cpp.o
+
+.PHONY : src/magnet.o
+
+# target to build an object file
+src/magnet.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.o
+.PHONY : src/magnet.cpp.o
+
+src/magnet.i: src/magnet.cpp.i
+
+.PHONY : src/magnet.i
+
+# target to preprocess a source file
+src/magnet.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.i
+.PHONY : src/magnet.cpp.i
+
+src/magnet.s: src/magnet.cpp.s
+
+.PHONY : src/magnet.s
+
+# target to generate assembly for a file
+src/magnet.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/magnet.cpp.s
+.PHONY : src/magnet.cpp.s
 
 src/main.o: src/main.cpp.o
 
@@ -285,6 +663,141 @@ src/other_handlers.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.s
 .PHONY : src/other_handlers.cpp.s
 
+src/platform.o: src/platform.cpp.o
+
+.PHONY : src/platform.o
+
+# target to build an object file
+src/platform.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/platform.cpp.o
+.PHONY : src/platform.cpp.o
+
+src/platform.i: src/platform.cpp.i
+
+.PHONY : src/platform.i
+
+# target to preprocess a source file
+src/platform.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/platform.cpp.i
+.PHONY : src/platform.cpp.i
+
+src/platform.s: src/platform.cpp.s
+
+.PHONY : src/platform.s
+
+# target to generate assembly for a file
+src/platform.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/platform.cpp.s
+.PHONY : src/platform.cpp.s
+
+src/player.o: src/player.cpp.o
+
+.PHONY : src/player.o
+
+# target to build an object file
+src/player.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/player.cpp.o
+.PHONY : src/player.cpp.o
+
+src/player.i: src/player.cpp.i
+
+.PHONY : src/player.i
+
+# target to preprocess a source file
+src/player.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/player.cpp.i
+.PHONY : src/player.cpp.i
+
+src/player.s: src/player.cpp.s
+
+.PHONY : src/player.s
+
+# target to generate assembly for a file
+src/player.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/player.cpp.s
+.PHONY : src/player.cpp.s
+
+src/ring.o: src/ring.cpp.o
+
+.PHONY : src/ring.o
+
+# target to build an object file
+src/ring.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.o
+.PHONY : src/ring.cpp.o
+
+src/ring.i: src/ring.cpp.i
+
+.PHONY : src/ring.i
+
+# target to preprocess a source file
+src/ring.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.i
+.PHONY : src/ring.cpp.i
+
+src/ring.s: src/ring.cpp.s
+
+.PHONY : src/ring.s
+
+# target to generate assembly for a file
+src/ring.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ring.cpp.s
+.PHONY : src/ring.cpp.s
+
+src/segmentdisplay.o: src/segmentdisplay.cpp.o
+
+.PHONY : src/segmentdisplay.o
+
+# target to build an object file
+src/segmentdisplay.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.o
+.PHONY : src/segmentdisplay.cpp.o
+
+src/segmentdisplay.i: src/segmentdisplay.cpp.i
+
+.PHONY : src/segmentdisplay.i
+
+# target to preprocess a source file
+src/segmentdisplay.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.i
+.PHONY : src/segmentdisplay.cpp.i
+
+src/segmentdisplay.s: src/segmentdisplay.cpp.s
+
+.PHONY : src/segmentdisplay.s
+
+# target to generate assembly for a file
+src/segmentdisplay.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/segmentdisplay.cpp.s
+.PHONY : src/segmentdisplay.cpp.s
+
+src/speedboost.o: src/speedboost.cpp.o
+
+.PHONY : src/speedboost.o
+
+# target to build an object file
+src/speedboost.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.o
+.PHONY : src/speedboost.cpp.o
+
+src/speedboost.i: src/speedboost.cpp.i
+
+.PHONY : src/speedboost.i
+
+# target to preprocess a source file
+src/speedboost.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.i
+.PHONY : src/speedboost.cpp.i
+
+src/speedboost.s: src/speedboost.cpp.s
+
+.PHONY : src/speedboost.s
+
+# target to generate assembly for a file
+src/speedboost.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/speedboost.cpp.s
+.PHONY : src/speedboost.cpp.s
+
 src/timer.o: src/timer.cpp.o
 
 .PHONY : src/timer.o
@@ -312,6 +825,33 @@ src/timer.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
 
+src/villian.o: src/villian.cpp.o
+
+.PHONY : src/villian.o
+
+# target to build an object file
+src/villian.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/villian.cpp.o
+.PHONY : src/villian.cpp.o
+
+src/villian.i: src/villian.cpp.i
+
+.PHONY : src/villian.i
+
+# target to preprocess a source file
+src/villian.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/villian.cpp.i
+.PHONY : src/villian.cpp.i
+
+src/villian.s: src/villian.cpp.s
+
+.PHONY : src/villian.s
+
+# target to generate assembly for a file
+src/villian.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/villian.cpp.s
+.PHONY : src/villian.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -321,15 +861,57 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... graphics_asgn1"
+	@echo "... src/background.o"
+	@echo "... src/background.i"
+	@echo "... src/background.s"
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
+	@echo "... src/boomerang.o"
+	@echo "... src/boomerang.i"
+	@echo "... src/boomerang.s"
+	@echo "... src/bullet.o"
+	@echo "... src/bullet.i"
+	@echo "... src/bullet.s"
+	@echo "... src/coin.o"
+	@echo "... src/coin.i"
+	@echo "... src/coin.s"
+	@echo "... src/coin2.o"
+	@echo "... src/coin2.i"
+	@echo "... src/coin2.s"
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
+	@echo "... src/digit.o"
+	@echo "... src/digit.i"
+	@echo "... src/digit.s"
+	@echo "... src/extrapoints.o"
+	@echo "... src/extrapoints.i"
+	@echo "... src/extrapoints.s"
+	@echo "... src/firebeams.o"
+	@echo "... src/firebeams.i"
+	@echo "... src/firebeams.s"
+	@echo "... src/firelines.o"
+	@echo "... src/firelines.i"
+	@echo "... src/firelines.s"
+	@echo "... src/heart.o"
+	@echo "... src/heart.i"
+	@echo "... src/heart.s"
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
+	@echo "... src/krypton.o"
+	@echo "... src/krypton.i"
+	@echo "... src/krypton.s"
+	@echo "... src/laser.o"
+	@echo "... src/laser.i"
+	@echo "... src/laser.s"
+	@echo "... src/line.o"
+	@echo "... src/line.i"
+	@echo "... src/line.s"
+	@echo "... src/magnet.o"
+	@echo "... src/magnet.i"
+	@echo "... src/magnet.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
@@ -339,9 +921,27 @@ help:
 	@echo "... src/other_handlers.o"
 	@echo "... src/other_handlers.i"
 	@echo "... src/other_handlers.s"
+	@echo "... src/platform.o"
+	@echo "... src/platform.i"
+	@echo "... src/platform.s"
+	@echo "... src/player.o"
+	@echo "... src/player.i"
+	@echo "... src/player.s"
+	@echo "... src/ring.o"
+	@echo "... src/ring.i"
+	@echo "... src/ring.s"
+	@echo "... src/segmentdisplay.o"
+	@echo "... src/segmentdisplay.i"
+	@echo "... src/segmentdisplay.s"
+	@echo "... src/speedboost.o"
+	@echo "... src/speedboost.i"
+	@echo "... src/speedboost.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"
+	@echo "... src/villian.o"
+	@echo "... src/villian.i"
+	@echo "... src/villian.s"
 .PHONY : help
 
 

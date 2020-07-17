@@ -9,6 +9,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
+
 #define GLM_FORCE_RADIANS
 #include <glm/glm.hpp>
 #include <glm/gtx/transform.hpp>
@@ -71,7 +72,7 @@ struct bounding_box_t {
     float height;
 };
 
-bool detect_collision(bounding_box_t a, bounding_box_t b);
+bool detect_collision(bounding_box_t a, bounding_box_t b,float rotation);
 
 extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
@@ -81,5 +82,32 @@ extern const color_t COLOR_RED;
 extern const color_t COLOR_GREEN;
 extern const color_t COLOR_BLACK;
 extern const color_t COLOR_BACKGROUND;
+extern const color_t COLOR_YELLOW;
+extern const color_t COLOR_DARK_RED;
+extern const color_t COLOR_BATMAN_SUIT;
+extern const color_t COLOR_BATMAN_SKIN;
+extern const color_t COLOR_BATMAN_BODY;
+extern const color_t COLOR_BATMAN_BELT;
+extern const color_t COLOR_BATMAN_CAPE;
+extern const color_t COLOR_BATMAN_EYE;
+extern const color_t COLOR_FLAME_OUTER;
+extern const color_t COLOR_BATMAN_JETPACK;
+extern const color_t COLOR_BACKGROUND_OUTER;
+extern const color_t COLOR_COIN;
+extern const color_t COLOR_MAGNET_BODY;
+extern const color_t COLOR_MAGNET_FRONT;
+extern const color_t COLOR_BATMAN_WATER;
+extern const color_t COLOR_BOOMERANG;
+extern const color_t COLOR_EXTRAPOINTS;
+extern const color_t COLOR_SPEEDBOOST;
+extern const color_t COLOR_SUPERMAN_HAIR;
+extern const color_t COLOR_SUPERMAN_BODY;
+extern const color_t COLOR_SUPERMAN_CAPE;
+extern const color_t COLOR_SUPERMAN_BULLET;
+extern const color_t COLOR_KRYPTON;
+extern const color_t COLOR_FREEZE_CAPE;
+extern const color_t COLOR_FREEZE_BODY;
+extern const color_t COLOR_BATMAN_COIN;
+extern const color_t COLOR_FIRELINES;
 
 #endif

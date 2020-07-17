@@ -2,7 +2,7 @@
 #include <GLFW/glfw3.h>
 
 Timer::Timer(double interval) {
-    prev = 0;
+    prev = glfwGetTime();
     this->interval = interval;
 }
 

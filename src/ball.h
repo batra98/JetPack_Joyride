@@ -14,6 +14,8 @@ public:
     void set_position(float x, float y);
     void tick();
     double speed;
+    glm::vec3 acceleration;
+    glm::vec3 velocity;
 private:
     VAO *object;
 };
