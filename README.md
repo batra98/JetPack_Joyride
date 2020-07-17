@@ -45,7 +45,7 @@ make all
 - **Movement**
 	- Move Forward: :arrow_right:
 	- Move Backward: :arrow_left:
-	- Yaw Right: :arrow_up:
+	- Jetpack: :arrow_up:
 	- Shoot the villian (Superman): **F**
 	- Zoom In/Out: Mouse Wheel
 	- Water Balls: **Space**
